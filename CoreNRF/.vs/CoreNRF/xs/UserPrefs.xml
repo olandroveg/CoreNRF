@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{5C66B0F8-FCF7-4461-8CB7-CA25548AB73E}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Data/ApplicationDbContext.cs">
+    <Files>
+      <File FileName="CoreNRF/Models/Location.cs" Line="1" Column="1" />
+      <File FileName="CoreNRF/Models/NF.cs" Line="6" Column="20" />
+      <File FileName="CoreNRF/Models/Services.cs" Line="1" Column="1" />
+      <File FileName="CoreNRF/Data/EntitiesConfiguration.cs" Line="16" Column="64" />
+      <File FileName="CoreNRF/Data/ApplicationDbContext.cs" Line="22" Column="14" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CoreNRF" expanded="True">
+            <Node name="CoreNRF" expanded="True">
+              <Node name="Data" expanded="True">
+                <Node name="ApplicationDbContext.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.CoreNRF PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

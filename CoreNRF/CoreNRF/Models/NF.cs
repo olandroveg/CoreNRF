@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace CoreNRF.Models
 {
@@ -8,7 +8,7 @@ namespace CoreNRF.Models
         public Guid Id { get; set; }
         public string Name { get; set; }
         public Location Location { get; set; }
-        public ICollection Services { get; set; }
+        public ICollection<Services> Services { get; set; }
         public float BusyIndex { get; set; }
         public string State { get; set; }
     }
