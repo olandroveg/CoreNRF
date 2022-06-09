@@ -21,15 +21,15 @@ namespace CoreNRF.Data
                 throw;
             }
         }
-        public virtual DbSet<Location> Locations { get; set; }
-        public virtual DbSet<NF> NFs { get; set; }
-        public virtual DbSet<Services> Services { get; set; }
+        //public virtual DbSet<Location> Locations { get; set; }
+        //public virtual DbSet<NF> NFs { get; set; }
+        //public virtual DbSet<Services> Services { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.ApplyConfiguration(new LocationConfiguration());
-            builder.ApplyConfiguration(new NFConfiguration());
-            builder.ApplyConfiguration(new ServicesConfiguration());
+            //builder.ApplyConfiguration(new LocationConfiguration());
+            //builder.ApplyConfiguration(new NFConfiguration());
+            //builder.ApplyConfiguration(new ServicesConfiguration());
         }
         public DatabaseFacade GetDatabase()
         {
@@ -43,7 +43,7 @@ namespace CoreNRF.Data
         public ApplicationDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            optionsBuilder.UseMySql("server = localhost; port = 3306; database = CoreNRF; user = root; password = Cardinals25!", new MySqlServerVersion(new Version("8.0.28")));
+            optionsBuilder.UseMySql("server = localhost; port = 3306; database = coreNRF; user = root; password = Cardinals25!", new MySqlServerVersion(new Version("8.0.28")));
             return new ApplicationDbContext(optionsBuilder.Options);
         }
     }

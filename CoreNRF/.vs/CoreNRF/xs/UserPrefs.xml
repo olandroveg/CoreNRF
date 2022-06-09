@@ -2,10 +2,12 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Data/ApplicationDbContext.cs">
     <Files>
       <File FileName="CoreNRF/Models/Location.cs" Line="1" Column="1" />
-      <File FileName="CoreNRF/Models/NF.cs" Line="6" Column="20" />
+      <File FileName="CoreNRF/Models/NF.cs" Line="15" Column="2" />
       <File FileName="CoreNRF/Models/Services.cs" Line="1" Column="1" />
-      <File FileName="CoreNRF/Data/EntitiesConfiguration.cs" Line="16" Column="64" />
-      <File FileName="CoreNRF/Data/ApplicationDbContext.cs" Line="22" Column="14" />
+      <File FileName="CoreNRF/Data/ApplicationDbContext.cs" Line="46" Column="83" />
+      <File FileName="CoreNRF/appsettings.json" Line="5" Column="5" />
+      <File FileName="CoreNRF/Startup.cs" Line="1" Column="7" />
+      <File FileName="CoreNRF/Program.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,6 +17,7 @@
               <Node name="Data" expanded="True">
                 <Node name="ApplicationDbContext.cs" selected="True" />
               </Node>
+              <Node name="Migrations" expanded="True" />
             </Node>
           </Node>
         </State>
