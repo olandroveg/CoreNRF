@@ -1,28 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/subzero/Projects/CoreNRF/CoreNRF/CoreNRF/CoreNRF/CoreNRF.csproj": {}
+    "C:\\Users\\1094545\\source\\repos\\olandroveg\\CoreNRF\\CoreNRF\\CoreNRF\\CoreNRF.csproj": {}
   },
   "projects": {
-    "/Users/subzero/Projects/CoreNRF/CoreNRF/CoreNRF/CoreNRF/CoreNRF.csproj": {
+    "C:\\Users\\1094545\\source\\repos\\olandroveg\\CoreNRF\\CoreNRF\\CoreNRF\\CoreNRF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/subzero/Projects/CoreNRF/CoreNRF/CoreNRF/CoreNRF/CoreNRF.csproj",
+        "projectUniqueName": "C:\\Users\\1094545\\source\\repos\\olandroveg\\CoreNRF\\CoreNRF\\CoreNRF\\CoreNRF.csproj",
         "projectName": "CoreNRF",
-        "projectPath": "/Users/subzero/Projects/CoreNRF/CoreNRF/CoreNRF/CoreNRF/CoreNRF.csproj",
-        "packagesPath": "/Users/subzero/.nuget/packages/",
-        "outputPath": "/Users/subzero/Projects/CoreNRF/CoreNRF/CoreNRF/CoreNRF/obj/",
+        "projectPath": "C:\\Users\\1094545\\source\\repos\\olandroveg\\CoreNRF\\CoreNRF\\CoreNRF\\CoreNRF.csproj",
+        "packagesPath": "C:\\Users\\1094545\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\1094545\\source\\repos\\olandroveg\\CoreNRF\\CoreNRF\\CoreNRF\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "/Users/subzero/.config/NuGet/NuGet.Config"
+          "C:\\Users\\1094545\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -82,6 +85,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.17, 5.0.17]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -90,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.406/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
