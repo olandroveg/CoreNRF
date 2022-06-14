@@ -1,23 +1,25 @@
 ﻿<Properties StartupConfiguration="{5C66B0F8-FCF7-4461-8CB7-CA25548AB73E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Data/ApplicationDbContext.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Models/Services.cs">
     <Files>
       <File FileName="CoreNRF/Models/Location.cs" Line="1" Column="1" />
-      <File FileName="CoreNRF/Models/NF.cs" Line="15" Column="2" />
-      <File FileName="CoreNRF/Models/Services.cs" Line="1" Column="1" />
-      <File FileName="CoreNRF/Data/ApplicationDbContext.cs" Line="46" Column="83" />
-      <File FileName="CoreNRF/appsettings.json" Line="5" Column="5" />
-      <File FileName="CoreNRF/Startup.cs" Line="1" Column="7" />
-      <File FileName="CoreNRF/Program.cs" Line="1" Column="1" />
+      <File FileName="CoreNRF/Models/NF.cs" />
+      <File FileName="CoreNRF/Models/Services.cs" Line="14" Column="6" />
+      <File FileName="CoreNRF/Data/ApplicationDbContext.cs" />
+      <File FileName="CoreNRF/appsettings.json" />
+      <File FileName="CoreNRF/Startup.cs" />
+      <File FileName="CoreNRF/Program.cs" />
+      <File FileName="CoreNRF/Data/EntitiesConfiguration.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CoreNRF" expanded="True">
             <Node name="CoreNRF" expanded="True">
-              <Node name="Data" expanded="True">
-                <Node name="ApplicationDbContext.cs" selected="True" />
-              </Node>
+              <Node name="Data" expanded="True" />
               <Node name="Migrations" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Services.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
