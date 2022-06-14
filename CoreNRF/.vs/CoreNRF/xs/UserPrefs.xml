@@ -2,12 +2,13 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Data/ApplicationDbContext.cs">
     <Files>
       <File FileName="CoreNRF/Models/Location.cs" Line="1" Column="1" />
-      <File FileName="CoreNRF/Models/NF.cs" Line="15" Column="2" />
-      <File FileName="CoreNRF/Models/Services.cs" Line="1" Column="1" />
-      <File FileName="CoreNRF/Data/ApplicationDbContext.cs" Line="46" Column="83" />
-      <File FileName="CoreNRF/appsettings.json" Line="5" Column="5" />
-      <File FileName="CoreNRF/Startup.cs" Line="1" Column="7" />
-      <File FileName="CoreNRF/Program.cs" Line="1" Column="1" />
+      <File FileName="CoreNRF/Models/NF.cs" />
+      <File FileName="CoreNRF/Models/Services.cs" />
+      <File FileName="CoreNRF/Data/ApplicationDbContext.cs" Line="39" Column="1" />
+      <File FileName="CoreNRF/appsettings.json" />
+      <File FileName="CoreNRF/Startup.cs" />
+      <File FileName="CoreNRF/Program.cs" />
+      <File FileName="CoreNRF/Data/EntitiesConfiguration.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
