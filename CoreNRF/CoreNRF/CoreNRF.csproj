@@ -20,5 +20,25 @@
 
   <ItemGroup>
     <None Remove="Migrations\" />
+    <None Remove="Api\" />
+    <None Remove="Dtos\" />
+    <None Remove="Utils\" />
+    <None Remove="Dtos\NRFDto\" />
+    <None Remove="Services\" />
+    <None Remove="Services\NFService\" />
+    <None Remove="Services\ServicesService\" />
+    <None Remove="Dtos\LocationDto\" />
+    <None Remove="Dtos\ServiceDto\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Api\" />
+    <Folder Include="Dtos\" />
+    <Folder Include="Utils\" />
+    <Folder Include="Dtos\NRFDto\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\NFService\" />
+    <Folder Include="Services\ServicesService\" />
+    <Folder Include="Dtos\LocationDto\" />
+    <Folder Include="Dtos\ServiceDto\" />
   </ItemGroup>
 </Project>

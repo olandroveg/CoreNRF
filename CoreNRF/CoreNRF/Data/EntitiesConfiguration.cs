@@ -24,14 +24,13 @@ namespace CoreNRF.Data
         }
 
     }
-    public class ServicesConfiguration : IEntityTypeConfiguration<Services>
+    public class ServicesConfiguration : IEntityTypeConfiguration<Models.Services>
     {
-        public void Configure(EntityTypeBuilder<Services> builder)
+        public void Configure(EntityTypeBuilder<Models.Services> builder)
         {
             builder.ToTable("Services");
             builder.HasKey(e => e.Id);
 
         }
-
     }
 }

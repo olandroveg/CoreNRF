@@ -1,25 +1,42 @@
 ﻿<Properties StartupConfiguration="{5C66B0F8-FCF7-4461-8CB7-CA25548AB73E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Models/Services.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Dtos/ServiceDto/IncomeServiceDto.cs">
     <Files>
-      <File FileName="CoreNRF/Models/Location.cs" Line="1" Column="1" />
-      <File FileName="CoreNRF/Models/NF.cs" />
-      <File FileName="CoreNRF/Models/Services.cs" Line="14" Column="6" />
-      <File FileName="CoreNRF/Data/ApplicationDbContext.cs" />
+      <File FileName="CoreNRF/Models/NF.cs" Line="13" Column="42" />
+      <File FileName="CoreNRF/Api/RegisterController.cs" Line="31" Column="1" />
+      <File FileName="CoreNRF/Models/Location.cs" Line="10" Column="46" />
+      <File FileName="CoreNRF/Models/Services.cs" Line="16" Column="1" />
       <File FileName="CoreNRF/appsettings.json" />
-      <File FileName="CoreNRF/Startup.cs" />
+      <File FileName="CoreNRF/Startup.cs" Line="25" Column="1" />
       <File FileName="CoreNRF/Program.cs" />
-      <File FileName="CoreNRF/Data/EntitiesConfiguration.cs" />
+      <File FileName="CoreNRF/Data/EntitiesConfiguration.cs" Line="17" Column="64" />
+      <File FileName="CoreNRF/Utils/ServiceCollectionExtension.cs" Line="18" Column="1" />
+      <File FileName="CoreNRF/Services/NFService.cs" Line="25" Column="10" />
+      <File FileName="CoreNRF/Services/NFService/INFService.cs" Line="13" Column="49" />
+      <File FileName="CoreNRF/Services/ServicesService/ServicesService.cs" Line="30" Column="17" />
+      <File FileName="CoreNRF/Services/ServicesService/IServicesService.cs" Line="16" Column="1" />
+      <File FileName="CoreNRF/Data/ApplicationDbContext.cs" Line="22" Column="14" />
+      <File FileName="CoreNRF/Dtos/NRFDto/IncomeNFDto.cs" Line="7" Column="24" />
+      <File FileName="CoreNRF/Dtos/LocationDto/IncomeLocationDto.cs" Line="10" Column="45" />
+      <File FileName="CoreNRF/Dtos/ServiceDto/IncomeServiceDto.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CoreNRF" expanded="True">
             <Node name="CoreNRF" expanded="True">
+              <Node name="Api" expanded="True" />
               <Node name="Data" expanded="True" />
-              <Node name="Migrations" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="Services.cs" selected="True" />
+              <Node name="Dtos" expanded="True">
+                <Node name="ServiceDto" expanded="True">
+                  <Node name="IncomeServiceDto.cs" selected="True" />
+                </Node>
               </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="NFService" expanded="True" />
+                <Node name="ServicesService" expanded="True" />
+              </Node>
+              <Node name="Utils" expanded="True" />
             </Node>
           </Node>
         </State>
