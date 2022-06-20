@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace CoreNRF.Models
 {
@@ -9,4 +10,5 @@ namespace CoreNRF.Models
         public double Latitude { get; set; }
         public double Longitude { get; set; }
     }
+    
 }

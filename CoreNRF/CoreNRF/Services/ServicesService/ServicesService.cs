@@ -54,5 +54,9 @@ namespace CoreNRF.Services.ServicesService
 
             }
         }
+        public IEnumerable<Guid> GetServiceIdsByNF(Guid nFId)
+        {
+            return _context.Services.Where(x => x.NfId == nFId).Select(x => x.Id);
+        }
     }
 }

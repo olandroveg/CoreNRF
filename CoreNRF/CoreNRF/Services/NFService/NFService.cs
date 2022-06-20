@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CoreNRF.Data;
 using CoreNRF.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CoreNRF.Services.NFService
 {
@@ -45,6 +46,10 @@ namespace CoreNRF.Services.NFService
                 await _context.SaveChangesAsync();
 
             }
+        }
+        public NF GetNFById(Guid Id)
+        {            
+            return _context.NFs.Include(x => x.Location).Include(x=> x.Services).Where(x => x.Id == Id).FirstOrDefault();
         }
         
     }

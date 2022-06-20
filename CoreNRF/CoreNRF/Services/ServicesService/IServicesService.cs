@@ -11,5 +11,6 @@ namespace CoreNRF.Services.ServicesService
         Task<Guid> AddOrUpdateSigleService(Models.Services service);
         Task AddOrUpdateServiceRange(IEnumerable<Models.Services> services);
         Task DeleteRange(IEnumerable<Guid> ids);
+        IEnumerable<Guid> GetServiceIdsByNF(Guid nFId);
     }
 }

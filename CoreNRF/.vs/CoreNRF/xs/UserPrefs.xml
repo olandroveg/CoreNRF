@@ -1,38 +1,47 @@
 ﻿<Properties StartupConfiguration="{5C66B0F8-FCF7-4461-8CB7-CA25548AB73E}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Dtos/ServiceDto/IncomeServiceDto.cs">
     <Files>
-      <File FileName="CoreNRF/Models/NF.cs" Line="13" Column="42" />
-      <File FileName="CoreNRF/Api/RegisterController.cs" Line="31" Column="1" />
-      <File FileName="CoreNRF/Models/Location.cs" Line="10" Column="46" />
-      <File FileName="CoreNRF/Models/Services.cs" Line="16" Column="1" />
-      <File FileName="CoreNRF/appsettings.json" />
-      <File FileName="CoreNRF/Startup.cs" Line="25" Column="1" />
-      <File FileName="CoreNRF/Program.cs" />
-      <File FileName="CoreNRF/Data/EntitiesConfiguration.cs" Line="17" Column="64" />
-      <File FileName="CoreNRF/Utils/ServiceCollectionExtension.cs" Line="18" Column="1" />
-      <File FileName="CoreNRF/Services/NFService.cs" Line="25" Column="10" />
-      <File FileName="CoreNRF/Services/NFService/INFService.cs" Line="13" Column="49" />
-      <File FileName="CoreNRF/Services/ServicesService/ServicesService.cs" Line="30" Column="17" />
-      <File FileName="CoreNRF/Services/ServicesService/IServicesService.cs" Line="16" Column="1" />
-      <File FileName="CoreNRF/Data/ApplicationDbContext.cs" Line="22" Column="14" />
-      <File FileName="CoreNRF/Dtos/NRFDto/IncomeNFDto.cs" Line="7" Column="24" />
-      <File FileName="CoreNRF/Dtos/LocationDto/IncomeLocationDto.cs" Line="10" Column="45" />
-      <File FileName="CoreNRF/Dtos/ServiceDto/IncomeServiceDto.cs" Line="1" Column="1" />
+      <File FileName="CoreNRF/Api/RegisterController.cs" Line="59" Column="10" />
+      <File FileName="CoreNRF/Adapters/ServiceAdapter/ServiceAdapter.cs" Line="13" Column="100" />
+      <File FileName="CoreNRF/Adapters/ServiceAdapter/IServiceAdapter.cs" Line="10" Column="106" />
+      <File FileName="CoreNRF/Program.cs" Line="13" Column="6" />
+      <File FileName="CoreNRF/Adapters/NFAdapter/NFAdapter.cs" Line="21" Column="6" />
+      <File FileName="CoreNRF/Adapters/NFAdapter/INFAdapter.cs" Line="1" Column="1" />
+      <File FileName="CoreNRF/Utils/ServiceCollectionExtension.cs" Line="14" Column="6" />
+      <File FileName="CoreNRF/Adapters/LocationAdapter/ILocationAdapter.cs" Line="12" Column="1" />
+      <File FileName="CoreNRF/Adapters/LocationAdapter/LocationAdapter.cs" Line="18" Column="10" />
+      <File FileName="CoreNRF/Services/NFService/NFService.cs" Line="46" Column="51" />
+      <File FileName="CoreNRF/Services/NFService/INFService.cs" Line="5" Column="1" />
+      <File FileName="CoreNRF/Services/LocationService/LocationService.cs" Line="2" Column="34" />
+      <File FileName="CoreNRF/Services/LocationService/ILocationService.cs" Line="1" Column="1" />
+      <File FileName="CoreNRF/Services/ServicesService/ServicesService.cs" Line="48" Column="42" />
+      <File FileName="CoreNRF/Services/ServicesService/IServicesService.cs" Line="13" Column="49" />
+      <File FileName="CoreNRF/Dtos/ServiceDto/IncomeServiceDto.cs" Line="5" Column="6" />
+      <File FileName="CoreNRF/Dtos/LocationDto/IncomeLocationDto.cs" Line="12" Column="9" />
+      <File FileName="CoreNRF/Dtos/NRFDto/IncomeNFDto.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CoreNRF" expanded="True">
             <Node name="CoreNRF" expanded="True">
+              <Node name="Adapters" expanded="True">
+                <Node name="LocationAdapter" expanded="True" />
+                <Node name="NFAdapter" expanded="True" />
+                <Node name="ServiceAdapter" expanded="True" />
+              </Node>
               <Node name="Api" expanded="True" />
               <Node name="Data" expanded="True" />
               <Node name="Dtos" expanded="True">
+                <Node name="LocationDto" expanded="True" />
+                <Node name="NRFDto" expanded="True" />
                 <Node name="ServiceDto" expanded="True">
                   <Node name="IncomeServiceDto.cs" selected="True" />
                 </Node>
               </Node>
               <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True">
+                <Node name="LocationService" expanded="True" />
                 <Node name="NFService" expanded="True" />
                 <Node name="ServicesService" expanded="True" />
               </Node>
