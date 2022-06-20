@@ -20,14 +20,14 @@ namespace CoreNRF.Api
             _servicesServices = servicesService;
         }
         [HttpPost]
-        public async Task< IActionResult> Register([FromBody] NF nF)
+        public async Task< IActionResult> Register([FromBody] IncomeNFDto nFDto)
         {
-            //var nF = new NF
-            //{
-            //    Id = nFDto.id,
-            //    State = nFDto.state,
-            //    Name = nFDto.name
-            //};
+            var nF = new NF
+            {
+                Id = Guid.Parse(nFDto.Id),
+                State = nFDto.state,
+                Name = nFDto.Name
+            };
             var nfId = await _nFService.AddOrUpdate(nF);
             if (nfId != Guid.Empty)
             {
