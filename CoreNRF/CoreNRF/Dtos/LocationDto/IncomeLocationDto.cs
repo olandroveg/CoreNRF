@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Threading.Tasks;
+using CoreNRF.Models;
 
-namespace CoreNRF.Models
+namespace CoreNRF.Dtos.LocationDto
 {
-    public class Location
+    public class IncomeLocationDto
     {
-        public Guid Id { get; set; }
+        
         public string Name { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
+        
     }
-    
 }

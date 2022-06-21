@@ -23,7 +23,7 @@ namespace CoreNRF.Data
         }
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<NF> NFs { get; set; }
-        public virtual DbSet<Services> Services { get; set; }
+        public virtual DbSet<Models.Services> Services { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

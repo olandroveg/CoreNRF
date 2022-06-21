@@ -20,5 +20,35 @@
 
   <ItemGroup>
     <None Remove="Migrations\" />
+    <None Remove="Api\" />
+    <None Remove="Dtos\" />
+    <None Remove="Utils\" />
+    <None Remove="Dtos\NRFDto\" />
+    <None Remove="Services\" />
+    <None Remove="Services\NFService\" />
+    <None Remove="Services\ServicesService\" />
+    <None Remove="Dtos\LocationDto\" />
+    <None Remove="Dtos\ServiceDto\" />
+    <None Remove="Adapters\" />
+    <None Remove="Adapters\ServiceAdapter\" />
+    <None Remove="Adapters\LocationAdapter\" />
+    <None Remove="Services\LocationService\" />
+    <None Remove="Adapters\NFAdapter\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Api\" />
+    <Folder Include="Dtos\" />
+    <Folder Include="Utils\" />
+    <Folder Include="Dtos\NRFDto\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\NFService\" />
+    <Folder Include="Services\ServicesService\" />
+    <Folder Include="Dtos\LocationDto\" />
+    <Folder Include="Dtos\ServiceDto\" />
+    <Folder Include="Adapters\" />
+    <Folder Include="Adapters\ServiceAdapter\" />
+    <Folder Include="Adapters\LocationAdapter\" />
+    <Folder Include="Services\LocationService\" />
+    <Folder Include="Adapters\NFAdapter\" />
   </ItemGroup>
 </Project>
