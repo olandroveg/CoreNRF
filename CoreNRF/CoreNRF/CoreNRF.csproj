@@ -36,15 +36,12 @@
     <None Remove="Adapters\NFAdapter\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Api\" />
-    <Folder Include="Dtos\" />
     <Folder Include="Utils\" />
     <Folder Include="Dtos\NRFDto\" />
     <Folder Include="Services\" />
     <Folder Include="Services\NFService\" />
     <Folder Include="Services\ServicesService\" />
     <Folder Include="Dtos\LocationDto\" />
-    <Folder Include="Dtos\ServiceDto\" />
     <Folder Include="Adapters\" />
     <Folder Include="Adapters\ServiceAdapter\" />
     <Folder Include="Adapters\LocationAdapter\" />

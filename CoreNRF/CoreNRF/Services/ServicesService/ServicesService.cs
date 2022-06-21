@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using CoreNRF.Data;
 using CoreNRF.Models;
 using System.Linq;
+using CoreNRF.Dtos.ServiceDto;
 
 namespace CoreNRF.Services.ServicesService
 {
@@ -57,6 +58,18 @@ namespace CoreNRF.Services.ServicesService
         public IEnumerable<Guid> GetServiceIdsByNF(Guid nFId)
         {
             return _context.Services.Where(x => x.NfId == nFId).Select(x => x.Id);
+        }
+        public IEnumerable<ServicesAnswerDto> GetServAPItoNF (IEnumerable<string> serviceRqts)
+        {
+            return serviceRqts.Select(x =>
+           {
+               return _context.Services.Where(e => e.Name == x).Select(g => new ServicesAnswerDto
+               {
+                   ServicesAPI = g.ServiceAPI,
+                   TargetNFAdd = g.NfBaseAddress
+               }).FirstOrDefault();
+           });
+            
         }
     }
 }

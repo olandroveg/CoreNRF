@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoreNRF.Dtos.ServiceDto;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -12,5 +13,6 @@ namespace CoreNRF.Services.ServicesService
         Task AddOrUpdateServiceRange(IEnumerable<Models.Services> services);
         Task DeleteRange(IEnumerable<Guid> ids);
         IEnumerable<Guid> GetServiceIdsByNF(Guid nFId);
+        IEnumerable<ServicesAnswerDto> GetServAPItoNF(IEnumerable<string> serviceRqts);
     }
 }
