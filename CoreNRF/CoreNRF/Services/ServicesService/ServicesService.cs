@@ -5,6 +5,7 @@ using CoreNRF.Data;
 using CoreNRF.Models;
 using System.Linq;
 using CoreNRF.Dtos.ServiceDto;
+using Microsoft.EntityFrameworkCore;
 
 namespace CoreNRF.Services.ServicesService
 {
@@ -63,13 +64,48 @@ namespace CoreNRF.Services.ServicesService
         {
             return serviceRqts.Select(x =>
            {
-               return _context.Services.Where(e => e.Name == x).Select(g => new ServicesAnswerDto
+               return _context.Services.Include(e=> e.Nf).Where(e => e.Name == x && e.Nf.State == "available").Select(g => new ServicesAnswerDto
                {
                    ServicesAPI = g.ServiceAPI,
-                   TargetNFAdd = g.NfBaseAddress
+                   TargetNFAdd = g.NfBaseAddress,
+                   ServiceName = g.Name
                }).FirstOrDefault();
            });
             
         }
+        public async Task< IEnumerable<ServicesAnswerDto>> GetServAPIAfterDisclaim(IEnumerable<ServicesAnswerDto> serviceAnswerDisclaim, IEnumerable<string> serviceRqts)
+        {
+            var serviceAnswer = new List<ServicesAnswerDto>();
+            foreach(var item in serviceAnswerDisclaim)
+            {
+                // HASTA AHORA NO HAY PARAMETROS DE EVAUACION DE CUAL NF ENTRE OTRAS DE SIMILAR TIPO (IDENTICOS SERVICIOS) SERA LA QUE SE DEVOLVERA POR EL NRF.
+                // SE PRESUME QUE HABRA QUE HACER ANALISIS DE DISTANCIA, NIVEL DE OCUPACION, ETC. POR LO PRONTO SE TOMARA EL 1ER NF DE ESE TIPO QUE ESTA REGISTRADO EN BD (FirstOrDefault())
+                var serv = serviceRqts.Select(x =>
+                {
+                    return _context.Services.Include(e=>e.Nf).Where(e => e.Nf.State== "available" && e.Name == x && e.NfBaseAddress != item.TargetNFAdd).Select(g => new ServicesAnswerDto
+                    {
+                        ServicesAPI = g.ServiceAPI,
+                        TargetNFAdd = g.NfBaseAddress,
+                        ServiceName = g.Name
+                    }).FirstOrDefault();
+                });
+                if (serv != null)
+                    serviceAnswer.AddRange(serv);
+
+            }
+            await DisableNFfromCatalog(serviceAnswerDisclaim);
+            return serviceAnswer;
+        }
+        public async Task DisableNFfromCatalog (IEnumerable<ServicesAnswerDto> serviceAnswerDisclaim)
+        {
+            foreach (var item in serviceAnswerDisclaim)
+            {
+                var nFtoDisable = _context.Services.Include(x => x.Nf).Where(e => e.NfBaseAddress == item.TargetNFAdd).Select(x => x.Nf).FirstOrDefault();
+                nFtoDisable.State = "disable";
+                _context.NFs.Update(nFtoDisable);
+            }
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

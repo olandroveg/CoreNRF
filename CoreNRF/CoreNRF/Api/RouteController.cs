@@ -7,6 +7,7 @@ using CoreNRF.Services.NFService;
 using CoreNRF.Services.ServicesService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -33,13 +34,21 @@ namespace CoreNRF.Api
             _nFAdapter = nFAdapter;
         }
         [HttpPost]
-        public IActionResult ServiceRequest([FromBody] ServiceReqstDto serviceRqst)
+        public async Task< IActionResult> ServiceRequest([FromBody] ServiceReqstDto serviceRqst)
         {
             if (serviceRqst.NFId == null || serviceRqst.ServiceNames.Any(x=> x == string.Empty))
                 return BadRequest();
-           // return (IActionResult)_servicesServices.GetServAPItoNF(serviceRqst.ServiceNames.AsEnumerable());
-           var res = _servicesServices.GetServAPItoNF(serviceRqst.ServiceNames.AsEnumerable());
-            return Ok(res);
+            IEnumerable<ServicesAnswerDto> serv = null;
+            if (!serviceRqst.DisclaimNotWork)
+            {
+                serv = _servicesServices.GetServAPItoNF(serviceRqst.ServiceNames.AsEnumerable());
+            }
+            else
+            {
+                serv = await _servicesServices.GetServAPIAfterDisclaim(serviceRqst.serviceNotWork, serviceRqst.ServiceNames.AsEnumerable());
+            }
+           
+            return Ok(serv);
         }
     }
 }

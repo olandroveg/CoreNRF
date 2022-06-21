@@ -6,6 +6,7 @@ namespace CoreNRF.Dtos.ServiceDto
     {
         public string ServicesAPI { get; set; }
         public string TargetNFAdd { get; set; }
+        public string ServiceName { get; set; }
 
     }
     
