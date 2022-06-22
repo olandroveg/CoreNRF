@@ -1,15 +1,22 @@
 ﻿<Properties StartupConfiguration="{5C66B0F8-FCF7-4461-8CB7-CA25548AB73E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Dtos/Suscription/SuscriptionDto.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Data/ApplicationDbContext.cs">
     <Files>
       <File FileName="CoreNRF/Api/RegisterController.cs" Line="34" Column="36" />
-      <File FileName="CoreNRF/Api/RouteController.cs" Line="35" Column="10" />
+      <File FileName="CoreNRF/Api/RouteController.cs" />
       <File FileName="CoreNRF/Dtos/ServiceDto/ServiceReqstDto.cs" />
       <File FileName="CoreNRF/Services/ServicesService/ServicesService.cs" />
       <File FileName="CoreNRF/Dtos/NRFDto/IncomeNFDto.cs" />
       <File FileName="CoreNRF/Dtos/ServiceDto/ServicesAnswerDto.cs" />
       <File FileName="CoreNRF/Services/ServicesService/IServicesService.cs" />
       <File FileName="CoreNRF/Adapters/ServiceAdapter/ServiceAdapter.cs" />
-      <File FileName="CoreNRF/Dtos/Suscription/SuscriptionDto.cs" Line="1" Column="1" />
+      <File FileName="CoreNRF/Dtos/Suscription/SuscriptionDto.cs" Line="11" Column="1" />
+      <File FileName="CoreNRF/Models/Services.cs" />
+      <File FileName="CoreNRF/Models/NF.cs" />
+      <File FileName="CoreNRF/Data/EntitiesConfiguration.cs" Line="27" Column="1" />
+      <File FileName="CoreNRF/Data/ApplicationDbContext.cs" Line="42" Column="6" />
+      <File FileName="CoreNRF/Migrations/20220622110004_TableNFService.cs" Line="11" Column="33" />
+      <File FileName="CoreNRF/Startup.cs" Line="20" Column="10" />
+      <File FileName="CoreNRF/Models/NFServices.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,12 +29,11 @@
                 <Node name="ServiceAdapter" expanded="True" />
               </Node>
               <Node name="Api" expanded="True" />
-              <Node name="Data" expanded="True" />
-              <Node name="Dtos" expanded="True">
-                <Node name="Suscription" expanded="True">
-                  <Node name="SuscriptionDto.cs" selected="True" />
-                </Node>
+              <Node name="Data" expanded="True">
+                <Node name="ApplicationDbContext.cs" selected="True" />
               </Node>
+              <Node name="Dtos" expanded="True" />
+              <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True">
                 <Node name="LocationService" expanded="True" />

@@ -11,5 +11,7 @@ namespace CoreNRF.Models
         public string Description { get; set; }
         public string NfBaseAddress { get; set; }
         public string ServiceAPI { get; set; }
+        public Guid NFServId { get; set; }
+        public NFServices NFService { get; set; }
     }
 }
