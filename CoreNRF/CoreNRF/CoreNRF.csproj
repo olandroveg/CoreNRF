@@ -34,6 +34,7 @@
     <None Remove="Adapters\LocationAdapter\" />
     <None Remove="Services\LocationService\" />
     <None Remove="Adapters\NFAdapter\" />
+    <None Remove="Dtos\Suscription\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utils\" />
@@ -47,5 +48,6 @@
     <Folder Include="Adapters\LocationAdapter\" />
     <Folder Include="Services\LocationService\" />
     <Folder Include="Adapters\NFAdapter\" />
+    <Folder Include="Dtos\Suscription\" />
   </ItemGroup>
 </Project>
