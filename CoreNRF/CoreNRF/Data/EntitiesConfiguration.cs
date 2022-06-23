@@ -30,9 +30,8 @@ namespace CoreNRF.Data
         {
             builder.ToTable("NFServices");
             builder.HasKey(e => e.Id);
-            builder.HasMany(e => e.Services).WithOne(e => e.NFService).HasForeignKey(e => e.NFServId).OnDelete(DeleteBehavior.Cascade);
-            builder.HasMany(e => e.nFs).WithOne(e => e.NFServices).HasForeignKey(e => e.NFServiceId).OnDelete(DeleteBehavior.Cascade);
-
+            builder.HasOne(e=> e.Service).WithMany(e=> e.NFService).HasForeignKey(e => e.ServiceId).OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(e => e.NF).WithMany(e => e.NFServices).HasForeignKey(e => e.NFId).OnDelete(DeleteBehavior.Cascade);
         }
     }
 

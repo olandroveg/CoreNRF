@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CoreNRF.Models
 {
@@ -11,7 +12,6 @@ namespace CoreNRF.Models
         public string Description { get; set; }
         public string NfBaseAddress { get; set; }
         public string ServiceAPI { get; set; }
-        public Guid NFServId { get; set; }
-        public NFServices NFService { get; set; }
+        public ICollection<NFServices> NFService { get; set; }
     }
 }
