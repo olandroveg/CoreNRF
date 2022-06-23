@@ -4,7 +4,7 @@ namespace CoreNRF.Dtos.NRFDto
 {
     public class NFServiceRegisDto
     {
-        public string Id { get; set; }
+        public string NFId { get; set; }
         public ICollection< string> ServiceName { get; set; }
     }
 }

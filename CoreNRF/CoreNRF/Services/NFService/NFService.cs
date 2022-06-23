@@ -20,10 +20,10 @@ namespace CoreNRF.Services.NFService
         {
             return _context.NFs;
         }
-        public NF GetNFbyId(Guid Id)
-        {
-            return _context.NFs.Find(Id);
-        }
+        //public NF GetNFbyId(Guid Id)
+        //{
+        //    return _context.NFs.Find(Id);
+        //}
         public async Task<Guid> AddOrUpdate (NF nF)
         {
             if (nF.Id == Guid.Empty)
@@ -51,6 +51,7 @@ namespace CoreNRF.Services.NFService
         {            
             return _context.NFs.Include(x => x.Location).Include(x=> x.Services).Where(x => x.Id == Id).FirstOrDefault();
         }
+        
         
     }
 }

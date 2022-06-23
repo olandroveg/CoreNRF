@@ -8,7 +8,7 @@ namespace CoreNRF.Services.NFService
     public interface INFService
     {
         IEnumerable<NF> GetAllNF();
-        NF GetNFbyId(Guid Id);
+        //NF GetNFbyId(Guid Id);
         Task<Guid> AddOrUpdate(NF nF);
         Task DeleteRange(IEnumerable<Guid> ids);
         NF GetNFById(Guid Id);

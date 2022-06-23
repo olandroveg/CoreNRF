@@ -57,6 +57,14 @@ namespace CoreNRF.Api
             }
             return Ok("NF not found");
         }
+        [HttpPost]
+        public async Task<IActionResult> SuscribeNFtoContent([FromBody] NFServiceRegisDto nfRegistServ)
+        {
+            if (nfRegistServ.NFId != string.Empty)
+            {
+                var id = await 
+            }
+        }
 
     }
 }
