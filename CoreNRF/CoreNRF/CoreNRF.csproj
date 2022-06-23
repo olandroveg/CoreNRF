@@ -34,21 +34,20 @@
     <None Remove="Adapters\LocationAdapter\" />
     <None Remove="Services\LocationService\" />
     <None Remove="Adapters\NFAdapter\" />
+    <None Remove="Dtos\Suscription\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Api\" />
-    <Folder Include="Dtos\" />
     <Folder Include="Utils\" />
     <Folder Include="Dtos\NRFDto\" />
     <Folder Include="Services\" />
     <Folder Include="Services\NFService\" />
     <Folder Include="Services\ServicesService\" />
     <Folder Include="Dtos\LocationDto\" />
-    <Folder Include="Dtos\ServiceDto\" />
     <Folder Include="Adapters\" />
     <Folder Include="Adapters\ServiceAdapter\" />
     <Folder Include="Adapters\LocationAdapter\" />
     <Folder Include="Services\LocationService\" />
     <Folder Include="Adapters\NFAdapter\" />
+    <Folder Include="Dtos\Suscription\" />
   </ItemGroup>
 </Project>
