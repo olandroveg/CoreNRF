@@ -9,14 +9,13 @@
       <File FileName="CoreNRF/Dtos/ServiceDto/ServicesAnswerDto.cs" />
       <File FileName="CoreNRF/Services/ServicesService/IServicesService.cs" />
       <File FileName="CoreNRF/Adapters/ServiceAdapter/ServiceAdapter.cs" />
-      <File FileName="CoreNRF/Dtos/Suscription/SuscriptionDto.cs" Line="11" Column="1" />
+      <File FileName="CoreNRF/Dtos/Suscription/SuscriptionDto.cs" />
       <File FileName="CoreNRF/Models/Services.cs" />
       <File FileName="CoreNRF/Models/NF.cs" />
-      <File FileName="CoreNRF/Data/EntitiesConfiguration.cs" Line="27" Column="1" />
+      <File FileName="CoreNRF/Data/EntitiesConfiguration.cs" />
       <File FileName="CoreNRF/Data/ApplicationDbContext.cs" Line="42" Column="6" />
-      <File FileName="CoreNRF/Migrations/20220622110004_TableNFService.cs" Line="11" Column="33" />
-      <File FileName="CoreNRF/Startup.cs" Line="20" Column="10" />
-      <File FileName="CoreNRF/Models/NFServices.cs" Line="1" Column="1" />
+      <File FileName="CoreNRF/Startup.cs" />
+      <File FileName="CoreNRF/Models/NFServices.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
