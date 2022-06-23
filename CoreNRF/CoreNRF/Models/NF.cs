@@ -11,5 +11,6 @@ namespace CoreNRF.Models
         public ICollection<Services> Services { get; set; }
         public float BusyIndex { get; set; }
         public string State { get; set; }
+        public ICollection<NFServices> NFServices  { get; set; }
     }
 }

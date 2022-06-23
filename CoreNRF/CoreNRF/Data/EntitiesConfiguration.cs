@@ -24,6 +24,17 @@ namespace CoreNRF.Data
         }
 
     }
+    public class NFServicesConfiguration : IEntityTypeConfiguration<NFServices>
+    {
+        public void Configure(EntityTypeBuilder<NFServices> builder)
+        {
+            builder.ToTable("NFServices");
+            builder.HasKey(e => e.Id);
+            builder.HasOne(e=> e.Service).WithMany(e=> e.NFService).HasForeignKey(e => e.ServiceId).OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(e => e.NF).WithMany(e => e.NFServices).HasForeignKey(e => e.NFId).OnDelete(DeleteBehavior.Cascade);
+        }
+    }
+
     public class ServicesConfiguration : IEntityTypeConfiguration<Models.Services>
     {
         public void Configure(EntityTypeBuilder<Models.Services> builder)

@@ -24,12 +24,14 @@ namespace CoreNRF.Data
         public virtual DbSet<Location> Locations { get; set; }
         public virtual DbSet<NF> NFs { get; set; }
         public virtual DbSet<Models.Services> Services { get; set; }
+        public virtual DbSet<NFServices> NFServices { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
             builder.ApplyConfiguration(new LocationConfiguration());
             builder.ApplyConfiguration(new NFConfiguration());
             builder.ApplyConfiguration(new ServicesConfiguration());
+            builder.ApplyConfiguration(new NFServicesConfiguration());
         }
         public DatabaseFacade GetDatabase()
         {
