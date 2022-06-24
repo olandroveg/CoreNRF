@@ -14,7 +14,8 @@ namespace CoreNRF.Adapters.NFAdapter
                 BusyIndex = nfDto.BusyIndex,
                 Name = nfDto.Name,
                 State = nfDto.state,
-                Location = location
+                Location = location,
+                SuscriptionAPI = nfDto.SuscriptionApi
 
             };
         }
@@ -24,6 +25,7 @@ namespace CoreNRF.Adapters.NFAdapter
             nF.Location = location;
             nF.Name = nfDto.Name;
             nF.State = nfDto.state;
+            nF.SuscriptionAPI = nfDto.SuscriptionApi;
             return nF;
         }
     }

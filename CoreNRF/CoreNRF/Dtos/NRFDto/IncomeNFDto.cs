@@ -13,5 +13,6 @@ namespace CoreNRF.Dtos.NRFDto
         public ICollection<IncomeServiceDto> Services { get; set; }
         public float BusyIndex { get; set; }
         public string state { get; set; }
+        public string SuscriptionApi { get; set; }
     }
 }
