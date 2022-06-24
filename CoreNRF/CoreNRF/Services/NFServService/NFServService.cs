@@ -39,20 +39,10 @@ namespace CoreNRF.Services.NFServService
         }
         public async Task AddOrUpdateRange (IEnumerable<NFServices> nFServices)
         {
-            if (nFServices.Any(x => x.Id == Guid.Empty))
-            {
-                foreach (var item in nFServices)
-                {
-                    await _context.NFServices.AddAsync(item);
-                }
-            }
-            else
-            {
-                foreach (var item in nFServices)
-                {
-                    _context.NFServices.Update(item);
-                }
-            }
+            if (nFServices.Any(x => x.NFId == Guid.Empty))
+                throw new Exception("No NF Id");
+            foreach (var item in nFServices)
+                await _context.NFServices.AddAsync(item);
             await _context.SaveChangesAsync();
         }
         public async Task DeleteRange (IEnumerable<Guid> ids)
@@ -62,8 +52,8 @@ namespace CoreNRF.Services.NFServService
                 
                 foreach (var item in ids)
                 {
-                    var found = _context.NFs.Find(item);
-                    _context.NFs.Remove(found);
+                    var found = _context.NFServices.Find(item);
+                    _context.NFServices.Remove(found);
                 }
                 await _context.SaveChangesAsync();
 

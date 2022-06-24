@@ -106,14 +106,14 @@ namespace CoreNRF.Services.ServicesService
             }
             await _context.SaveChangesAsync();
         }
-        public IEnumerable <Models.Services> GetServicesByName (IEnumerable<string> names)
+        public IEnumerable <Models.Services> GetServicesByNames (IEnumerable<string> names)
         {
             return names.Select(x =>
             {
                 return _context.Services.Where(a => a.Name == x).FirstOrDefault();
             });
         }
-        public Models.Services GetServicesByNames(string name)
+        public Models.Services GetServicesByName(string name)
         {
             
                 return _context.Services.Where(a => a.Name == name).FirstOrDefault();
