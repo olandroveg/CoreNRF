@@ -13,6 +13,9 @@ namespace CoreNRF.RequestAPI
         {
             _NFurl = NFaddress;
         }
+        public async Task<string> Notify()
+        {
 
+        }
     }
 }

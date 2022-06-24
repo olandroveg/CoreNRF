@@ -49,7 +49,6 @@
     <Folder Include="Adapters\LocationAdapter\" />
     <Folder Include="Services\LocationService\" />
     <Folder Include="Adapters\NFAdapter\" />
-    <Folder Include="Dtos\Suscription\" />
     <Folder Include="Services\NFServService\" />
     <Folder Include="Adapters\NFServAdapter\" />
   </ItemGroup>
