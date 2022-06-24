@@ -16,5 +16,7 @@ namespace CoreNRF.Services.ServicesService
         IEnumerable<ServicesAnswerDto> GetServAPItoNF(IEnumerable<string> serviceRqts);
         Task<IEnumerable<ServicesAnswerDto>> GetServAPIAfterDisclaim(IEnumerable<ServicesAnswerDto> serviceAnswerDisclaim, IEnumerable<string> serviceRqts);
         Task DisableNFfromCatalog(IEnumerable<ServicesAnswerDto> serviceAnswerDisclaim);
+        IEnumerable<Models.Services> GetServicesByNames(IEnumerable<string> names);
+        Models.Services GetServicesByName(string name);
     }
 }

@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using CoreNRF.Adapters.LocationAdapter;
 using CoreNRF.Adapters.NFAdapter;
+using CoreNRF.Adapters.NFServAdapter;
 using CoreNRF.Adapters.ServiceAdapter;
 using CoreNRF.Dtos.NRFDto;
 using CoreNRF.Models;
 using CoreNRF.Services.LocationService;
 using CoreNRF.Services.NFService;
+using CoreNRF.Services.NFServService;
 using CoreNRF.Services.ServicesService;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,9 +25,12 @@ namespace CoreNRF.Api
         private readonly ILocationAdapter _locationAdapter;
         private readonly IServiceAdapter _serviceAdapter;
         private readonly INFAdapter _nFAdapter;
+        private readonly INFServService _INFServService;
+        private readonly INFServAdapter _INFServAdapter;
 
         public RegisterController(INFService nFService, IServicesService servicesService, ILocationAdapter locationAdapter,
-            ILocationService locationService, IServiceAdapter serviceAdapter, INFAdapter nFAdapter)
+            ILocationService locationService, IServiceAdapter serviceAdapter, INFAdapter nFAdapter, INFServService nFServService,
+            INFServAdapter nFServAdapter)
         {
             _nFService = nFService;
             _servicesServices = servicesService;
@@ -32,6 +38,8 @@ namespace CoreNRF.Api
             _locationService = locationService;
             _serviceAdapter = serviceAdapter;
             _nFAdapter = nFAdapter;
+            _INFServService = nFServService;
+            _INFServAdapter = nFServAdapter;
         }
         [HttpPost]
         public async Task< IActionResult> Register([FromBody] IncomeNFDto nFDto)
@@ -56,6 +64,26 @@ namespace CoreNRF.Api
                 return Ok(nfId);
             }
             return Ok("NF not found");
+        }
+        [HttpPost]
+        public async Task<IActionResult> SuscribeNFtoContent([FromBody] NFServiceRegisDto nfRegistServ)
+        {
+            if (nfRegistServ.NFId == string.Empty)
+                return BadRequest("No NF Id in the request");
+
+            var nFServ = _INFServService.GetNFServicesRegisteredByNF(Guid.Parse(nfRegistServ.NFId));
+            if (nFServ != null && nFServ.Count() > 0)
+                await _INFServService.DeleteRange(nFServ.Select(x => x.Id).AsEnumerable());
+            try
+            {
+                await _INFServService.AddOrUpdateRange(_INFServAdapter.ConvertDtoToNFServs(nfRegistServ));
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
 
     }
