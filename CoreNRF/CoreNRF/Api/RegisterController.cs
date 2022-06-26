@@ -83,8 +83,8 @@ namespace CoreNRF.Api
             {
                 return BadRequest(ex.Message);
             }
-            
         }
+        
 
     }
 }
