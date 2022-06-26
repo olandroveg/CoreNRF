@@ -21,10 +21,11 @@ namespace CoreNRF.Adapters.NFServAdapter
         {
             return nFServiceDto.ServiceName.Select(x => new NFServices
             {
-                NFId= nFServiceDto.NFId != string.Empty ? Guid.Parse(nFServiceDto.NFId) : Guid.Empty,
+                NFId = nFServiceDto.NFId != string.Empty ? Guid.Parse(nFServiceDto.NFId) : Guid.Empty,
                 ServiceId = _ServicesService.GetServicesByName(x).Id
             });
             
+
         }
     }
 }

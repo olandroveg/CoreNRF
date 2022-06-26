@@ -1,19 +1,24 @@
 ﻿<Properties StartupConfiguration="{5C66B0F8-FCF7-4461-8CB7-CA25548AB73E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Api/RegisterController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Services/ServicesService/ServicesService.cs">
     <Files>
       <File FileName="CoreNRF/RequestAPI/NotifySuscription.cs" Line="18" Column="10" />
-      <File FileName="CoreNRF/Dtos/Notification/NotifSuscripDto.cs" Line="5" Column="18" />
-      <File FileName="CoreNRF/Api/RegisterController.cs" Line="87" Column="9" />
+      <File FileName="CoreNRF/Dtos/Notification/NotifSuscripDto.cs" />
+      <File FileName="CoreNRF/Api/RegisterController.cs" Line="79" Column="1" />
+      <File FileName="CoreNRF/Dtos/NRFDto/IncomeNFDto.cs" Line="16" Column="51" />
+      <File FileName="CoreNRF/Dtos/NRFDto/NFServiceRegisDto.cs" Line="8" Column="48" />
+      <File FileName="CoreNRF/Services/NFServService/NFServService.cs" Line="1" Column="1" />
+      <File FileName="CoreNRF/Adapters/NFServAdapter/NFServAdapter.cs" Line="34" Column="50" />
+      <File FileName="CoreNRF/Services/ServicesService/ServicesService.cs" Line="109" Column="46" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CoreNRF" expanded="True">
             <Node name="CoreNRF" expanded="True">
-              <Node name="Adapters" expanded="True" />
-              <Node name="Api" expanded="True">
-                <Node name="RegisterController.cs" selected="True" />
+              <Node name="Adapters" expanded="True">
+                <Node name="NFServAdapter" expanded="True" />
               </Node>
+              <Node name="Api" expanded="True" />
               <Node name="Data" expanded="True" />
               <Node name="Dtos" expanded="True">
                 <Node name="Notification" expanded="True" />
@@ -25,7 +30,9 @@
               <Node name="Services" expanded="True">
                 <Node name="NFService" expanded="True" />
                 <Node name="NFServService" expanded="True" />
-                <Node name="ServicesService" expanded="True" />
+                <Node name="ServicesService" expanded="True">
+                  <Node name="ServicesService.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="Utils" expanded="True" />
             </Node>
@@ -38,7 +45,10 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/subzero/Projects/CoreNRF/CoreNRF/CoreNRF/CoreNRF/Api/RegisterController.cs" relfile="CoreNRF/Api/RegisterController.cs" line="80" column="1" />
+      <Breakpoint file="/Users/subzero/Projects/CoreNRF/CoreNRF/CoreNRF/CoreNRF/Services/NFServService/NFServService.cs" relfile="CoreNRF/Services/NFServService/NFServService.cs" line="33" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

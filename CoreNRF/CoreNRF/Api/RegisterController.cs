@@ -76,7 +76,9 @@ namespace CoreNRF.Api
                 await _INFServService.DeleteRange(nFServ.Select(x => x.Id).AsEnumerable());
             try
             {
+                
                 await _INFServService.AddOrUpdateRange(_INFServAdapter.ConvertDtoToNFServs(nfRegistServ));
+                
                 return Ok();
             }
             catch (Exception ex)

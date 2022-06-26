@@ -41,9 +41,19 @@ namespace CoreNRF.Services.NFServService
         {
             if (nFServices.Any(x => x.NFId == Guid.Empty))
                 throw new Exception("No NF Id");
-            foreach (var item in nFServices)
-                await _context.NFServices.AddAsync(item);
-            await _context.SaveChangesAsync();
+            try
+            {
+                foreach (var item in nFServices)
+                {
+                    await _context.NFServices.AddAsync(item);
+                }
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception e)
+            {
+                var a = e.Message;
+            }
+            
         }
         public async Task DeleteRange (IEnumerable<Guid> ids)
         {

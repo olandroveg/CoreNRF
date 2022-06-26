@@ -117,7 +117,6 @@ namespace CoreNRF.Services.ServicesService
         {
             
                 return _context.Services.Where(a => a.Name == name).FirstOrDefault();
-            
         }
 
     }
