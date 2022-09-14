@@ -12,11 +12,14 @@ using CoreNRF.Services.NFService;
 using CoreNRF.Services.NFServService;
 using CoreNRF.Services.ServicesService;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace CoreNRF.Api
 {
     [Route("api/[controller]/[action]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class RegisterController : ControllerBase
     {
         private readonly INFService _nFService;

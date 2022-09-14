@@ -786,3 +786,4 @@ C:/Users/1094545/source/repos/olandroveg/CoreNRF/CoreNRF/CoreNRF/obj/Debug/net5.
 C:/Users/1094545/source/repos/olandroveg/CoreNRF/CoreNRF/CoreNRF/obj/Debug/net5.0/ref/CoreNRF.dll
 /Users/subzero/Projects/CoreNRF/CoreNRF/CoreNRF/CoreNRF/bin/Debug/net5.0/CoreNRF
 /Users/subzero/Projects/CoreNRF/CoreNRF/CoreNRF/CoreNRF/obj/Debug/net5.0/refint/CoreNRF.dll
+/Users/subzero/Projects/CoreNRF/CoreNRF/CoreNRF/CoreNRF/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
