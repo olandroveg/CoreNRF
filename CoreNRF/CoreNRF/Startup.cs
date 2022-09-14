@@ -28,7 +28,7 @@ namespace CoreNRF
         {
             services.UseInjection(Configuration);
             string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContextPool<ApplicationDbContext>(options => options.UseMySql("server = localhost; port = 3306; database = coreNRF; user = root; password = Cardinals25!", new MySqlServerVersion(new Version("8.0.28"))));
+            services.AddDbContextPool<ApplicationDbContext>(options => options.UseMySql("server = localhost; port = 3306; database = coreNRF; user = root; password = Cardinals25", new MySqlServerVersion(new Version("8.0.28"))));
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 //.AddRoles<IdentityRole>()
