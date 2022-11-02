@@ -3,9 +3,9 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.CoreNRF PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Api/RegisterController.cs">
     <Files>
-      <File FileName="CoreNRF/Startup.cs" Line="21" Column="53" />
+      <File FileName="CoreNRF/Startup.cs" Line="19" Column="25" />
       <File FileName="CoreNRF/Api/RegisterController.cs" Line="30" Column="48" />
       <File FileName="CoreNRF/Data/ApplicationDbContext.cs" Line="21" Column="1" />
       <File FileName="CoreNRF/Api/RouteController.cs" Line="28" Column="10" />
@@ -15,7 +15,9 @@
         <State name="__root__">
           <Node name="CoreNRF" expanded="True">
             <Node name="CoreNRF" expanded="True">
-              <Node name="Api" expanded="True" />
+              <Node name="Api" expanded="True">
+                <Node name="RegisterController.cs" selected="True" />
+              </Node>
               <Node name="Data" expanded="True" />
               <Node name="Utils" expanded="True" />
             </Node>
