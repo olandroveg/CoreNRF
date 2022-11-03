@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{5C66B0F8-FCF7-4461-8CB7-CA25548AB73E}|Default">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.CoreNRF PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Api/RegisterController.cs">
     <Files>
       <File FileName="CoreNRF/Startup.cs" Line="19" Column="25" />
-      <File FileName="CoreNRF/Api/RegisterController.cs" Line="30" Column="48" />
+      <File FileName="CoreNRF/Api/RegisterController.cs" Line="24" Column="6" />
       <File FileName="CoreNRF/Data/ApplicationDbContext.cs" Line="21" Column="1" />
       <File FileName="CoreNRF/Api/RouteController.cs" Line="28" Column="10" />
     </Files>
@@ -15,9 +16,7 @@
         <State name="__root__">
           <Node name="CoreNRF" expanded="True">
             <Node name="CoreNRF" expanded="True">
-              <Node name="Api" expanded="True">
-                <Node name="RegisterController.cs" selected="True" />
-              </Node>
+              <Node name="Api" expanded="True" />
               <Node name="Data" expanded="True" />
               <Node name="Utils" expanded="True" />
             </Node>
@@ -29,7 +28,6 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
