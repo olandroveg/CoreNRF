@@ -5,7 +5,7 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../../usr/local/share/dotnet/sdk/6.0.302/Sdks/Microsoft.NET.Sdk.Razor/targets/Microsoft.NET.Sdk.Razor.CodeGeneration.targets">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Services/NFService/NFService.cs">
     <Files>
       <File FileName="CoreNRF/Startup.cs" Line="45" Column="41" />
       <File FileName="CoreNRF/appsettings.json" Line="14" Column="2" />
@@ -21,7 +21,6 @@
       <File FileName="CoreNRF/Dtos/NRFDto/IncomeNFDto.cs" Line="20" Column="1" />
       <File FileName="CoreNRF/Models/NF.cs" Line="19" Column="1" />
       <File FileName="CoreNRF/Services/NFService/NFService.cs" Line="58" Column="14" />
-      <File FileName="../../../../../../usr/local/share/dotnet/sdk/6.0.302/Sdks/Microsoft.NET.Sdk.Razor/targets/Microsoft.NET.Sdk.Razor.CodeGeneration.targets" Line="132" Column="34" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -41,7 +40,9 @@
               <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True">
                 <Node name="LocationService" expanded="True" />
-                <Node name="NFService" expanded="True" />
+                <Node name="NFService" expanded="True">
+                  <Node name="NFService.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="Utils" expanded="True" />
             </Node>
