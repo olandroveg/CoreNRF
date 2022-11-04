@@ -7,9 +7,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace CoreNRF
@@ -28,7 +30,24 @@ namespace CoreNRF
         {
             services.UseInjection(Configuration);
             string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContextPool<ApplicationDbContext>(options => options.UseMySql("server = localhost; port = 3306; database = coreNRF; user = root; password = Cardinals25!", new MySqlServerVersion(new Version("8.0.28"))));
+            services.AddDbContextPool<ApplicationDbContext>(options => options.UseMySql("server = localhost; port = 3306; database = coreNRF; user = root; password = Cardinals25", new MySqlServerVersion(new Version("8.0.28"))));
+
+            services.AddAuthentication()
+            .AddCookie(jwt => jwt.SlidingExpiration = true)
+            .AddJwtBearer(jwt =>
+            {
+                var key = Encoding.ASCII.GetBytes(Constants.SECRET_KEY);
+                jwt.SaveToken = true;
+                jwt.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidIssuer = Constants.ISSUER,
+                    ValidAudience = Constants.ISSUER,
+                    ValidateAudience = true,
+                    ValidateLifetime = true
+                };
+            });
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 //.AddRoles<IdentityRole>()

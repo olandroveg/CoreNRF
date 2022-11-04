@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "nEBopf/VQYp031esxEHqNm28ewVnT93C/1JpLizAB+dguFyY73flrSmC7KLJVJxdLR+8tT3SW2miJELIx7I0/A==",
+  "dgSpecHash": "dLfvFzmwEuRg1B1NP23pvNVcHt22aRxkTro2BUKywusUSsk4votFYdX/naAhhWN5EK4Z4U3F2O97K2LUyZtFBg==",
   "success": true,
   "projectFilePath": "/Users/subzero/Projects/CoreNRF/CoreNRF/CoreNRF/CoreNRF/CoreNRF.csproj",
   "expectedPackageFiles": [
     "/Users/subzero/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/Users/subzero/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/3.1.23/microsoft.aspnetcore.authentication.jwtbearer.3.1.23.nupkg.sha512",
     "/Users/subzero/.nuget/packages/microsoft.aspnetcore.cryptography.internal/5.0.15/microsoft.aspnetcore.cryptography.internal.5.0.15.nupkg.sha512",
     "/Users/subzero/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/5.0.15/microsoft.aspnetcore.cryptography.keyderivation.5.0.15.nupkg.sha512",
     "/Users/subzero/.nuget/packages/microsoft.aspnetcore.diagnostics.entityframeworkcore/5.0.15/microsoft.aspnetcore.diagnostics.entityframeworkcore.5.0.15.nupkg.sha512",

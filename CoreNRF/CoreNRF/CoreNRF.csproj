@@ -16,6 +16,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.23" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +38,7 @@
     <None Remove="Dtos\Suscription\" />
     <None Remove="Services\NFServService\" />
     <None Remove="Adapters\NFServAdapter\" />
+    <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utils\" />
