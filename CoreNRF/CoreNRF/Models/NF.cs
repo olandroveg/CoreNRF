@@ -13,5 +13,6 @@ namespace CoreNRF.Models
         public string State { get; set; }
         public ICollection<NFServices> NFServices  { get; set; }
         public string SuscriptionAPI { get; set; }
+        public string Version { get; set; }
     }
 }
