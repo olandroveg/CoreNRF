@@ -45,29 +45,60 @@ namespace CoreNRF.Api
             _INFServAdapter = nFServAdapter;
         }
         [HttpPost]
-        public async Task< IActionResult> Register([FromBody] IncomeNFDto nFDto)
+        public async Task< IActionResult> RegisterOrUpdate([FromBody] IncomeNFDto nFDto)
         {
-                var location = await _locationService.AddOrUpdate(_locationAdapter.ConvertLocationDtoToLocation(nFDto.Location, Guid.Empty));
-                var nfId = await _nFService.AddOrUpdate(_nFAdapter.ConvertNFDtoToNF(nFDto, location));
-                await _servicesServices.AddOrUpdateServiceRange(_serviceAdapter.CovertServicesDtoToServices(nFDto.Services, nfId));
-                return Ok(nfId);     
-                    
-        }
-        [HttpPost]
-        public async Task<IActionResult> UpdateRegistration([FromBody] IncomeNFDto nFDto)
-        {
-            if (nFDto.Id!= string.Empty)
+                
+            try
             {
-                var nF = _nFService.GetNFById(Guid.Parse(nFDto.Id));
-                var location = await _locationService.AddOrUpdate(_locationAdapter.ConvertLocationDtoToUpdateLocation(nFDto.Location, nF.Location));
-                var nfId = await _nFService.AddOrUpdate(_nFAdapter.ConvertNFDtoToUpdateNF(nFDto, nF, location));
-                var serviceIds = _servicesServices.GetServiceIdsByNF(nfId);
-                await _servicesServices.DeleteRange(serviceIds);
-                await _servicesServices.AddOrUpdateServiceRange(_serviceAdapter.CovertServicesDtoToServices(nFDto.Services, nfId));
-                return Ok(nfId);
+                if (nFDto.Id != string.Empty)
+                {
+                    var nF = _nFService.GetNFById(Guid.Parse(nFDto.Id));
+                    var location = new Location();
+                    var nfId = Guid.Empty;
+                    if (nF.Id != Guid.Empty && Guid.Parse(nFDto.Id) == nF.Id)
+                    {
+                        location = await _locationService.AddOrUpdate(_locationAdapter.ConvertLocationDtoToUpdateLocation(nFDto.Location, nF.Location));
+                        nfId = await _nFService.AddOrUpdate(_nFAdapter.ConvertNFDtoToUpdateNF(nFDto, nF, location));
+                        var serviceIds = _servicesServices.GetServiceIdsByNF(nfId);
+                        await _servicesServices.DeleteRange(serviceIds);
+                        await _servicesServices.AddOrUpdateServiceRange(_serviceAdapter.CovertServicesDtoToServices(nFDto.Services, nfId));
+                        
+                    }
+                    else
+                    {
+                        location = await _locationService.AddOrUpdate(_locationAdapter.ConvertLocationDtoToLocation(nFDto.Location, Guid.Empty));
+                        nfId = await _nFService.AddOrUpdate(_nFAdapter.ConvertNFDtoToNF(nFDto, location));
+                        await _servicesServices.AddOrUpdateServiceRange(_serviceAdapter.CovertServicesDtoToServices(nFDto.Services, nfId));
+                    }
+                    return Ok(nfId);
+
+                }
+                return BadRequest("NF Id cannot be empty");
             }
-            return Ok("NF not found");
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
+
+
         }
+        // Depreciated novemb 2022
+        //[HttpPost]
+        //public async Task<IActionResult> UpdateRegistration([FromBody] IncomeNFDto nFDto)
+        //{
+        //    if (nFDto.Id!= string.Empty)
+        //    {
+        //        var nF = _nFService.GetNFById(Guid.Parse(nFDto.Id));
+        //        var location = await _locationService.AddOrUpdate(_locationAdapter.ConvertLocationDtoToUpdateLocation(nFDto.Location, nF.Location));
+        //        var nfId = await _nFService.AddOrUpdate(_nFAdapter.ConvertNFDtoToUpdateNF(nFDto, nF, location));
+        //        var serviceIds = _servicesServices.GetServiceIdsByNF(nfId);
+        //        await _servicesServices.DeleteRange(serviceIds);
+        //        await _servicesServices.AddOrUpdateServiceRange(_serviceAdapter.CovertServicesDtoToServices(nFDto.Services, nfId));
+        //        return Ok(nfId);
+        //    }
+        //    return Ok("NF not found");
+        //}
         [HttpPost]
         public async Task<IActionResult> SuscribeNFtoContent([FromBody] NFServiceRegisDto nfRegistServ)
         {
