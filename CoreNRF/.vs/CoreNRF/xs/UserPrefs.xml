@@ -1,14 +1,12 @@
 ﻿<Properties StartupConfiguration="{5C66B0F8-FCF7-4461-8CB7-CA25548AB73E}|Default">
-  <MonoDevelop.Ide.ItemProperties.CoreNRF PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Api/RouteController.cs">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Models/NF.cs">
     <Files>
       <File FileName="CoreNRF/Api/RegisterController.cs" Line="1" Column="1" />
       <File FileName="CoreNRF/Api/RouteController.cs" Line="39" Column="97" />
       <File FileName="CoreNRF/Dtos/ServiceDto/ServiceReqstDto.cs" Line="15" Column="1" />
       <File FileName="CoreNRF/Services/ServicesService/ServicesService.cs" Line="60" Column="10" />
+      <File FileName="CoreNRF/Models/NF.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,7 +20,9 @@
                 <Node name="ServiceDto" expanded="True" />
               </Node>
               <Node name="Migrations" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="NF.cs" selected="True" />
+              </Node>
               <Node name="Services" expanded="True">
                 <Node name="LocationService" expanded="True" />
                 <Node name="NFService" expanded="True" />
@@ -39,7 +39,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.CoreNRF PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
