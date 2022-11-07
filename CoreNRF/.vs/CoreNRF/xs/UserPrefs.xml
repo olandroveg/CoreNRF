@@ -3,12 +3,10 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Api/RouteController.cs">
     <Files>
       <File FileName="CoreNRF/Api/RegisterController.cs" Line="1" Column="1" />
-      <File FileName="CoreNRF/Api/RouteController.cs" Line="44" Column="98" />
+      <File FileName="CoreNRF/Api/RouteController.cs" Line="39" Column="97" />
       <File FileName="CoreNRF/Dtos/ServiceDto/ServiceReqstDto.cs" Line="15" Column="1" />
       <File FileName="CoreNRF/Services/ServicesService/ServicesService.cs" Line="60" Column="10" />
     </Files>
@@ -17,9 +15,7 @@
         <State name="__root__">
           <Node name="CoreNRF" expanded="True">
             <Node name="CoreNRF" expanded="True">
-              <Node name="Api" expanded="True">
-                <Node name="RouteController.cs" selected="True" />
-              </Node>
+              <Node name="Api" expanded="True" />
               <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True" />
               <Node name="Dtos" expanded="True">
@@ -43,5 +39,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
