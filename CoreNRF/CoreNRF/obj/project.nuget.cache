@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "yYL9wzWp1gzVeiQNO0xWOGI5JufrHx2WVWcjnx7rGz8Zgdhke/rK5HhkXJxcAsA0iXJgft2NT3XasAblstsbUw==",
+  "dgSpecHash": "x2q+whxF2WeuW8gq96UTnB+4yvXeWNxRFxsb93gQK37Dp9ToYOI3BO+94oi6xH02C/a5Z1IezbyCfqhViOOfyQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\1094545\\source\\repos\\olandroveg\\CoreNRF\\CoreNRF\\CoreNRF\\CoreNRF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\1094545\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\1094545\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.23\\microsoft.aspnetcore.authentication.jwtbearer.3.1.23.nupkg.sha512",
     "C:\\Users\\1094545\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.15\\microsoft.aspnetcore.cryptography.internal.5.0.15.nupkg.sha512",
     "C:\\Users\\1094545\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.15\\microsoft.aspnetcore.cryptography.keyderivation.5.0.15.nupkg.sha512",
     "C:\\Users\\1094545\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\5.0.15\\microsoft.aspnetcore.diagnostics.entityframeworkcore.5.0.15.nupkg.sha512",
@@ -125,5 +126,12 @@
     "C:\\Users\\1094545\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
     "C:\\Users\\1094545\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\1094545\\source\\repos\\olandroveg\\CoreNRF\\CoreNRF\\CoreNRF\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

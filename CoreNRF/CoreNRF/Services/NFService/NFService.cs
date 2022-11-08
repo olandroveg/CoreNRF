@@ -49,7 +49,8 @@ namespace CoreNRF.Services.NFService
         }
         public NF GetNFById(Guid Id)
         {            
-            return _context.NFs.Include(x => x.Location).Include(x=> x.Services).Where(x => x.Id == Id).FirstOrDefault();
+            var nf= _context.NFs.Include(x => x.Location).Include(x=> x.Services).Where(x => x.Id == Id).FirstOrDefault();
+            return nf != null && nf.Id != Guid.Empty ? nf : new NF { Id = Guid.Empty };
         }
         
         
