@@ -90,23 +90,23 @@ namespace CoreNRF.Api
 
         }
 
-        [HttpPost]
-        public async Task<IActionResult> RegisterPortalOrUpdate ([FromBody] PortalRegisterDto portal)
-        {
-            try
-            {
-                if (portal.Id != Guid.Empty)
-                {
-                    var port = _portalService.GetPortalById(portal.Id);
-                    var location = new Location();
-                    var nfId = Guid.Empty;
-                }
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+        //[HttpPost]
+        //public async Task<IActionResult> RegisterPortalOrUpdate ([FromBody] PortalRegisterDto portal)
+        //{
+        //    try
+        //    {
+        //        if (portal.Id != Guid.Empty)
+        //        {
+        //            var port = _portalService.GetPortalById(portal.Id);
+        //            var location = new Location();
+        //            var nfId = Guid.Empty;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
 
 
         [HttpPost]
