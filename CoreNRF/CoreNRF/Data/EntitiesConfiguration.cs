@@ -44,4 +44,22 @@ namespace CoreNRF.Data
 
         }
     }
+    public class PortalConfiguration : IEntityTypeConfiguration<Models.Portal>
+    {
+        public void Configure(EntityTypeBuilder<Models.Portal> builder)
+        {
+            builder.ToTable("Portal");
+            builder.HasKey(e => e.Id);
+        }
+    }
+    public class PortalNFConfiguration : IEntityTypeConfiguration<Models.PortalNF>
+    {
+        public void Configure(EntityTypeBuilder<Models.PortalNF> builder)
+        {
+            builder.ToTable("PortalNF");
+            builder.HasKey(e => e.Id);
+            builder.HasOne(e=> e.Portal).WithMany(e=> e.PortalNFs).HasForeignKey(e => e.PortalId).OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(e => e.NF).WithMany(e => e.PortalNFs).HasForeignKey(e => e.NFId).OnDelete(DeleteBehavior.Cascade);
+        }
+    }
 }

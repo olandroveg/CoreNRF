@@ -25,6 +25,8 @@ namespace CoreNRF.Data
         public virtual DbSet<NF> NFs { get; set; }
         public virtual DbSet<Models.Services> Services { get; set; }
         public virtual DbSet<NFServices> NFServices { get; set; }
+        public virtual DbSet<Portal> Portals { get; set; }
+        public virtual DbSet<PortalNF> PortalNF { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -32,6 +34,8 @@ namespace CoreNRF.Data
             builder.ApplyConfiguration(new NFConfiguration());
             builder.ApplyConfiguration(new ServicesConfiguration());
             builder.ApplyConfiguration(new NFServicesConfiguration());
+            builder.ApplyConfiguration(new PortalConfiguration());
+            builder.ApplyConfiguration(new PortalNFConfiguration());
         }
         public DatabaseFacade GetDatabase()
         {

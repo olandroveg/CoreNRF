@@ -14,5 +14,6 @@ namespace CoreNRF.Models
         public ICollection<NFServices> NFServices  { get; set; }
         public string SuscriptionAPI { get; set; }
         public string Version { get; set; }
+        public ICollection<PortalNF> PortalNFs { get; set; }
     }
 }
