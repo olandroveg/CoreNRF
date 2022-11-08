@@ -14,7 +14,9 @@ using CoreNRF.Services.ServicesService;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-
+using CoreNRF.Dtos.PortalDto;
+using CoreNRF.Services.PortalService;
+using CoreNRF.Services.PortalNFService;
 
 namespace CoreNRF.Api
 {
@@ -30,10 +32,12 @@ namespace CoreNRF.Api
         private readonly INFAdapter _nFAdapter;
         private readonly INFServService _INFServService;
         private readonly INFServAdapter _INFServAdapter;
+        private readonly IPortalService _portalService;
+        private readonly IPortalNFService _portalNFService;
 
         public RegisterController(INFService nFService, IServicesService servicesService, ILocationAdapter locationAdapter,
             ILocationService locationService, IServiceAdapter serviceAdapter, INFAdapter nFAdapter, INFServService nFServService,
-            INFServAdapter nFServAdapter)
+            INFServAdapter nFServAdapter, IPortalService portalService, IPortalNFService portalNFService)
         {
             _nFService = nFService;
             _servicesServices = servicesService;
@@ -43,6 +47,8 @@ namespace CoreNRF.Api
             _nFAdapter = nFAdapter;
             _INFServService = nFServService;
             _INFServAdapter = nFServAdapter;
+            _portalService = portalService;
+            _portalNFService = portalNFService;
         }
         [HttpPost]
         public async Task< IActionResult> RegisterOrUpdate([FromBody] IncomeNFDto nFDto)
@@ -83,22 +89,26 @@ namespace CoreNRF.Api
 
 
         }
-        // Depreciated novemb 2022
-        //[HttpPost]
-        //public async Task<IActionResult> UpdateRegistration([FromBody] IncomeNFDto nFDto)
-        //{
-        //    if (nFDto.Id!= string.Empty)
-        //    {
-        //        var nF = _nFService.GetNFById(Guid.Parse(nFDto.Id));
-        //        var location = await _locationService.AddOrUpdate(_locationAdapter.ConvertLocationDtoToUpdateLocation(nFDto.Location, nF.Location));
-        //        var nfId = await _nFService.AddOrUpdate(_nFAdapter.ConvertNFDtoToUpdateNF(nFDto, nF, location));
-        //        var serviceIds = _servicesServices.GetServiceIdsByNF(nfId);
-        //        await _servicesServices.DeleteRange(serviceIds);
-        //        await _servicesServices.AddOrUpdateServiceRange(_serviceAdapter.CovertServicesDtoToServices(nFDto.Services, nfId));
-        //        return Ok(nfId);
-        //    }
-        //    return Ok("NF not found");
-        //}
+
+        [HttpPost]
+        public async Task<IActionResult> RegisterPortalOrUpdate ([FromBody] PortalRegisterDto portal)
+        {
+            try
+            {
+                if (portal.Id != Guid.Empty)
+                {
+                    var port = _portalService.GetPortalById(portal.Id);
+                    var location = new Location();
+                    var nfId = Guid.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> SuscribeNFtoContent([FromBody] NFServiceRegisDto nfRegistServ)
         {

@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utils\" />
-    <Folder Include="Services\" />
     <Folder Include="Services\NFService\" />
     <Folder Include="Services\ServicesService\" />
     <Folder Include="Dtos\LocationDto\" />

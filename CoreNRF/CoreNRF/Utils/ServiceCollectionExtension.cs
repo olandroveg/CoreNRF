@@ -7,6 +7,8 @@ using CoreNRF.Models;
 using CoreNRF.Services.LocationService;
 using CoreNRF.Services.NFService;
 using CoreNRF.Services.NFServService;
+using CoreNRF.Services.PortalNFService;
+using CoreNRF.Services.PortalService;
 using CoreNRF.Services.ServicesService;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,6 +23,8 @@ namespace CoreNRF.Utils
             services.AddTransient<ILocationService, LocationService>();
             services.AddTransient<INFService, NFService>();
             services.AddTransient<IServicesService, ServicesService>();
+            services.AddTransient<IPortalService, PortalService>();
+            services.AddTransient<IPortalNFService, PortalNFService>();
             services.AddTransient<ILocationAdapter, LocationAdapter>();
             services.AddTransient<IServiceAdapter, ServiceAdapter>();
             services.AddTransient<INFAdapter, NFAdapter>();
