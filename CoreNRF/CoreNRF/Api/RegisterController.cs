@@ -50,63 +50,86 @@ namespace CoreNRF.Api
             _portalService = portalService;
             _portalNFService = portalNFService;
         }
+        
+
         [HttpPost]
-        public async Task< IActionResult> RegisterOrUpdate([FromBody] IncomeNFDto nFDto)
+        public async Task<IActionResult> RegisterOrUpdate([FromBody] IncomeNFDto nFDto)
         {
-                
             try
             {
-                if (nFDto.Id != string.Empty)
+                var location = new Location();
+                var nfId = Guid.Empty;
+                if (nFDto.Id != Guid.Empty.ToString())
                 {
                     var nF = _nFService.GetNFById(Guid.Parse(nFDto.Id));
-                    var location = new Location();
-                    var nfId = Guid.Empty;
-                    if (nF.Id != Guid.Empty && Guid.Parse(nFDto.Id) == nF.Id)
+                    if (nF != null && nF.Id != Guid.Empty)
                     {
                         location = await _locationService.AddOrUpdate(_locationAdapter.ConvertLocationDtoToUpdateLocation(nFDto.Location, nF.Location));
                         nfId = await _nFService.AddOrUpdate(_nFAdapter.ConvertNFDtoToUpdateNF(nFDto, nF, location));
                         var serviceIds = _servicesServices.GetServiceIdsByNF(nfId);
                         await _servicesServices.DeleteRange(serviceIds);
                         await _servicesServices.AddOrUpdateServiceRange(_serviceAdapter.CovertServicesDtoToServices(nFDto.Services, nfId));
-                        
+
                     }
                     else
-                    {
-                        location = await _locationService.AddOrUpdate(_locationAdapter.ConvertLocationDtoToLocation(nFDto.Location, Guid.Empty));
-                        nfId = await _nFService.AddOrUpdate(_nFAdapter.ConvertNFDtoToNF(nFDto, location));
-                        await _servicesServices.AddOrUpdateServiceRange(_serviceAdapter.CovertServicesDtoToServices(nFDto.Services, nfId));
-                    }
-                    return Ok(nfId);
-
+                        throw new Exception("No NF with the Id provided");
                 }
-                return BadRequest("NF Id cannot be empty");
+                else
+                {
+                    location = await _locationService.AddOrUpdate(_locationAdapter.ConvertLocationDtoToLocation(nFDto.Location, Guid.Empty));
+                    nfId = await _nFService.AddOrUpdate(_nFAdapter.ConvertNFDtoToNF(nFDto, location));
+                    await _servicesServices.AddOrUpdateServiceRange(_serviceAdapter.CovertServicesDtoToServices(nFDto.Services, nfId));
+                }
+                return Ok(nfId);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
-            
-
-
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> RegisterPortalOrUpdate ([FromBody] PortalRegisterDto portal)
-        //{
-        //    try
-        //    {
-        //        if (portal.Id != Guid.Empty)
-        //        {
-        //            var port = _portalService.GetPortalById(portal.Id);
-        //            var location = new Location();
-        //            var nfId = Guid.Empty;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest(ex.Message);
-        //    }
-        //}
+
+
+        [HttpPost]
+        public async Task<IActionResult> RegisterPortalOrUpdate([FromBody] PortalRegisterDto portal)
+        {
+            try
+            {
+                var location = new Location();
+                var portalId = Guid.Empty;
+                if (portal.Id != Guid.Empty)
+                {
+                    var port = _portalService.GetPortalById(portal.Id);
+                    if (port != null && port.Id != Guid.Empty)
+                        location = await _locationService.AddOrUpdate(_locationAdapter.ConvertLocationDtoToUpdateLocation(portal.Location, port.Location));
+                    else
+                        throw new Exception("No portal with the Id provided");
+                }
+                else
+                {
+                    location = await _locationService.AddOrUpdate(_locationAdapter.ConvertLocationDtoToLocation(portal.Location, Guid.Empty));
+                    portalId = await _portalService.AddOrUpdate(new Portal
+                    {
+                        Id = Guid.Empty,
+                        Location = new Location
+                        {
+                            Id = Guid.Empty,
+                            Latitude = portal.Location.Latitude,
+                            Longitude = portal.Location.Longitude,
+                            Name = portal.Location.Name
+                        },
+                        PortalName = portal.PortalName
+
+                    }) ?? Guid.Empty;
+                    
+                }
+                return Ok(portalId);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
 
         [HttpPost]
