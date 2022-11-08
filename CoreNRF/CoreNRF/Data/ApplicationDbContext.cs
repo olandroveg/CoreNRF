@@ -45,7 +45,7 @@ namespace CoreNRF.Data
         public ApplicationDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            optionsBuilder.UseMySql("server = localhost; port = 3306; database = coreNRF; user = root; password = Cardinals25!", new MySqlServerVersion(new Version("8.0.28")));
+            optionsBuilder.UseMySql("server = localhost; port = 3306; database = coreNRF; user = root; password = Cardinals25", new MySqlServerVersion(new Version("8.0.28")));
             return new ApplicationDbContext(optionsBuilder.Options);
         }
     }

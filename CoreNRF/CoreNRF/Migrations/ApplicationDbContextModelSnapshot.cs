@@ -58,6 +58,9 @@ namespace CoreNRF.Migrations
                     b.Property<string>("SuscriptionAPI")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Version")
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
 
                     b.HasIndex("LocationId");
