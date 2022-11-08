@@ -1,12 +1,14 @@
 ﻿<Properties StartupConfiguration="{5C66B0F8-FCF7-4461-8CB7-CA25548AB73E}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Models/NF.cs">
+  <MonoDevelop.Ide.ItemProperties.CoreNRF PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Services/ServicesService/ServicesService.cs">
     <Files>
       <File FileName="CoreNRF/Api/RegisterController.cs" Line="1" Column="1" />
       <File FileName="CoreNRF/Api/RouteController.cs" Line="39" Column="97" />
       <File FileName="CoreNRF/Dtos/ServiceDto/ServiceReqstDto.cs" Line="15" Column="1" />
-      <File FileName="CoreNRF/Services/ServicesService/ServicesService.cs" Line="60" Column="10" />
-      <File FileName="CoreNRF/Models/NF.cs" Line="1" Column="1" />
+      <File FileName="CoreNRF/Services/ServicesService/ServicesService.cs" Line="43" Column="47" />
+      <File FileName="CoreNRF/Models/NF.cs" Line="14" Column="65" />
+      <File FileName="CoreNRF/Models/PortalNF.cs" Line="6" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,14 +22,14 @@
                 <Node name="ServiceDto" expanded="True" />
               </Node>
               <Node name="Migrations" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="NF.cs" selected="True" />
-              </Node>
+              <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True">
                 <Node name="LocationService" expanded="True" />
                 <Node name="NFService" expanded="True" />
                 <Node name="NFServService" expanded="True" />
-                <Node name="ServicesService" expanded="True" />
+                <Node name="ServicesService" expanded="True">
+                  <Node name="ServicesService.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="Utils" expanded="True" />
             </Node>
@@ -39,10 +41,9 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.CoreNRF PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
