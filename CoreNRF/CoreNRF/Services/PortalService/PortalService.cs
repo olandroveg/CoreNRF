@@ -34,7 +34,8 @@ namespace CoreNRF.Services.PortalService
             {
                 if (portalId == Guid.Empty)
                     throw new ArgumentNullException(nameof(portalId));
-                return _context.Portals.Include(e => e.Location).FirstOrDefault(x=> x.Id == portalId);
+                var tmp = _context.Portals.Include(e => e.Location).FirstOrDefault(x=> x.Id == portalId);
+                return tmp;
             }
             catch (Exception e)
             {

@@ -101,27 +101,41 @@ namespace CoreNRF.Api
                 {
                     var port = _portalService.GetPortalById(portal.Id);
                     if (port != null && port.Id != Guid.Empty)
-                        location = await _locationService.AddOrUpdate(_locationAdapter.ConvertLocationDtoToUpdateLocation(portal.Location, port.Location));
+                    {
+
+                        port.Location = await _locationService.AddOrUpdate(_locationAdapter.ConvertLocationDtoToUpdateLocation(portal.Location, port.Location));
+                        port.PortalName = portal.PortalName;
+                        portalId = await _portalService.AddOrUpdate(port) ?? Guid.Empty;
+                    }
+                        
                     else
                         throw new Exception("No portal with the Id provided");
                 }
                 else
                 {
-                    location = await _locationService.AddOrUpdate(_locationAdapter.ConvertLocationDtoToLocation(portal.Location, Guid.Empty));
+                    //location = await _locationService.AddOrUpdate(_locationAdapter.ConvertLocationDtoToLocation(portal.Location, Guid.Empty));
+                    //portalId = await _portalService.AddOrUpdate(new Portal
+                    //{
+                    //    Id = Guid.Empty,
+                    //    Location = new Location
+                    //    {
+                    //        Id = Guid.Empty,
+                    //        Latitude = portal.Location.Latitude,
+                    //        Longitude = portal.Location.Longitude,
+                    //        Name = portal.Location.Name
+                    //    },
+                    //    PortalName = portal.PortalName
+
+                    //}) ?? Guid.Empty;
                     portalId = await _portalService.AddOrUpdate(new Portal
                     {
                         Id = Guid.Empty,
-                        Location = new Location
-                        {
-                            Id = Guid.Empty,
-                            Latitude = portal.Location.Latitude,
-                            Longitude = portal.Location.Longitude,
-                            Name = portal.Location.Name
-                        },
+                        Location = await _locationService.AddOrUpdate(_locationAdapter.ConvertLocationDtoToLocation(portal.Location, Guid.Empty)),
                         PortalName = portal.PortalName
 
                     }) ?? Guid.Empty;
-                    
+
+
                 }
                 return Ok(portalId);
             }
