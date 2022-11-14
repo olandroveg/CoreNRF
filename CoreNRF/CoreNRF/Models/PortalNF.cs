@@ -5,6 +5,7 @@ namespace CoreNRF.Models
     public class PortalNF
     {
         public Guid Id { get; set; }
+        //RelationName will be the concatenation of PortalName+NFName
         public string RelationName { get; set; }
         public Guid PortalId { get; set; }
         public Portal Portal { get; set; }
