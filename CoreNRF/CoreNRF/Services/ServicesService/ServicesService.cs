@@ -78,16 +78,18 @@ namespace CoreNRF.Services.ServicesService
         {
             try
             {
-                if (_context.Services.Any(e=> e.NfId == nfId))
+                if (_context.Services.Any(e => e.NfId == nfId))
                     return _context.Services.Where(x => x.NfId == nfId).Select(e => new ServicesAnswerDto
-                {
-                    NFId = e.NfId,
-                    ServiceName = e.Name,
-                    TargetNFAdd = e.NfBaseAddress,
-                    Description = e.Description,
-                    ServicesAPI = e.ServiceAPI
-                });
-                return _context.Services.Include(e => e.Nf).Where(x => x.Nf.Name == nfName).Select(e => new ServicesAnswerDto
+                    {
+                        NFId = e.NfId,
+                        ServiceName = e.Name,
+                        TargetNFAdd = e.NfBaseAddress,
+                        Description = e.Description,
+                        ServicesAPI = e.ServiceAPI
+                    });
+                // aqui se asume, al no existir todavia calculos de cual instanceas de NF iguales sea mas optima escoger, pues se escoje la 1ra q aparezca de ese tipo en BD.
+                var targNfId = _context.Services.Include(e => e.Nf).Where(x => x.Nf.Name == nfName).FirstOrDefault().NfId;
+                return _context.Services.Where(x => x.NfId == targNfId).Select(e => new ServicesAnswerDto
                 {
                     NFId = e.NfId,
                     ServiceName = e.Name,
