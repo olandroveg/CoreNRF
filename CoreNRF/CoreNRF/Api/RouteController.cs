@@ -68,20 +68,12 @@ namespace CoreNRF.Api
                     throw new ArgumentNullException(nameof(incomeDiscover));
                 var sourceId = Guid.Empty;
                 if (incomeDiscover.SourceNFId != Guid.Empty)
-                {
                     sourceId = _nFService.GetNFById(incomeDiscover.SourceNFId).Id;
-                }
-                if (incomeDiscover.PortalId != Guid.Empty)
-                {
+                if (incomeDiscover.PortalId != Guid.Empty)                
                     sourceId = _portalService.GetPortalById(incomeDiscover.PortalId).Id;
-                }
-                throw new Exception("No NF nor Portal found");
-                
-                
-                if (portal == null)
-                    throw new Exception("portalId not in RNF DB");
-            var apis = _servicesServices.GetAllApiFromNF(nfId, targetNFName);
-                return apis != null ? Ok(apis) : BadRequest("NfId or Name not found");
+                var serv = await _portalNFService.GetPortalNFbyIdsAndName(sourceId, incomeDiscover.TargetNFId, incomeDiscover.NFName, incomeDiscover.isPortal);
+                await _portalNFService.CheckAndAdd(sourceId, incomeDiscover.TargetNFId, incomeDiscover.NFName);
+                return Ok(serv);
             }
             catch (Exception e)
             {

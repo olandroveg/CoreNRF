@@ -78,7 +78,7 @@ namespace CoreNRF.Services.ServicesService
         {
             try
             {
-                if (_context.Services.Any(e => e.NfId == nfId))
+                if (nfId != Guid.Empty && _context.Services.Any(e => e.NfId == nfId))
                     return _context.Services.Where(x => x.NfId == nfId).Select(e => new ServicesAnswerDto
                     {
                         NFId = e.NfId,

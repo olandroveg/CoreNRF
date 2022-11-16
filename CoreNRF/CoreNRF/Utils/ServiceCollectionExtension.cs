@@ -2,6 +2,7 @@
 using CoreNRF.Adapters.LocationAdapter;
 using CoreNRF.Adapters.NFAdapter;
 using CoreNRF.Adapters.NFServAdapter;
+using CoreNRF.Adapters.PortalNfAdapter;
 using CoreNRF.Adapters.ServiceAdapter;
 using CoreNRF.Models;
 using CoreNRF.Services.LocationService;
@@ -29,6 +30,7 @@ namespace CoreNRF.Utils
             services.AddTransient<IServiceAdapter, ServiceAdapter>();
             services.AddTransient<INFAdapter, NFAdapter>();
             services.AddTransient<INFServAdapter, NFServAdapter>();
+            services.AddTransient<IPortalNfAdapter, PortalNfAdapter>();
         }
     }
 }
