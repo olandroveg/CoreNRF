@@ -1,6 +1,7 @@
 ﻿using CoreNRF.Adapters.LocationAdapter;
 using CoreNRF.Adapters.NFAdapter;
 using CoreNRF.Adapters.ServiceAdapter;
+using CoreNRF.Dtos.NRFDto;
 using CoreNRF.Dtos.ServiceDto;
 using CoreNRF.Services.LocationService;
 using CoreNRF.Services.NFService;
@@ -59,11 +60,24 @@ namespace CoreNRF.Api
             return Ok(serv);
         }
         [HttpPost]
-        public async Task<IActionResult> AllApisNF(Guid portalId, Guid nfId, string targetNFName)
+        public async Task<IActionResult> AllApisNF([FromBody] PortalOrNFDiscoverDto incomeDiscover)
         {
             try
             {
-                var portal = _portalService.GetPortalById(portalId);
+                if (incomeDiscover == null)
+                    throw new ArgumentNullException(nameof(incomeDiscover));
+                var sourceId = Guid.Empty;
+                if (incomeDiscover.SourceNFId != Guid.Empty)
+                {
+                    sourceId = _nFService.GetNFById(incomeDiscover.SourceNFId).Id;
+                }
+                if (incomeDiscover.PortalId != Guid.Empty)
+                {
+                    sourceId = _portalService.GetPortalById(incomeDiscover.PortalId).Id;
+                }
+                throw new Exception("No NF nor Portal found");
+                
+                
                 if (portal == null)
                     throw new Exception("portalId not in RNF DB");
             var apis = _servicesServices.GetAllApiFromNF(nfId, targetNFName);

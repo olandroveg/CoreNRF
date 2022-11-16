@@ -41,7 +41,6 @@
     <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Utils\" />
     <Folder Include="Services\NFService\" />
     <Folder Include="Services\ServicesService\" />
     <Folder Include="Dtos\LocationDto\" />
