@@ -76,9 +76,11 @@ namespace CoreNRF.Services.PortalNFService
             try
             {
                 var portalNF = _context.PortalNF.Where(x => x.PortalId == sourceNFId && x.NFId == targetNFId).FirstOrDefault();
-                if (portalNF == null)
-                    await AddOrUpdate(_portalNfAdapter.ConformPortalNFByFields(Guid.Empty, sourceNFId, targetNFId, name, DateTime.Now));
-                return portalNF.Id;
+                var portalId = portalNF == null ? await AddOrUpdate(_portalNfAdapter.ConformPortalNFByFields(Guid.Empty, sourceNFId, targetNFId, name, DateTime.Now)) : portalNF.Id;
+                return portalId ?? Guid.Empty;
+                //if (portalNF == null)
+                //    portalId = await AddOrUpdate(_portalNfAdapter.ConformPortalNFByFields(Guid.Empty, sourceNFId, targetNFId, name, DateTime.Now)) ?? Guid.Empty;
+                //return portalId != Guid.Empty ? portalId : portalNF.Id;
             }
             catch  (Exception e)
             {

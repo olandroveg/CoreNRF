@@ -12,5 +12,7 @@ namespace CoreNRF.Services.NFService
         Task<Guid> AddOrUpdate(NF nF);
         Task DeleteRange(IEnumerable<Guid> ids);
         NF GetNFById(Guid Id);
+        public NF GetNFbyName(string name);
+        public Guid GetNfIDbyName(string name);
     }
 }

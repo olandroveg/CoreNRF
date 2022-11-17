@@ -72,7 +72,7 @@ namespace CoreNRF.Api
                 if (incomeDiscover.PortalId != Guid.Empty)                
                     sourceId = _portalService.GetPortalById(incomeDiscover.PortalId).Id;
                 var serv = await _portalNFService.GetPortalNFbyIdsAndName(sourceId, incomeDiscover.TargetNFId, incomeDiscover.NFName, incomeDiscover.isPortal);
-                await _portalNFService.CheckAndAdd(sourceId, incomeDiscover.TargetNFId, incomeDiscover.NFName);
+                var targetNfId = await _portalNFService.CheckAndAdd(sourceId, incomeDiscover.TargetNFId, incomeDiscover.NFName);
                 return Ok(serv);
             }
             catch (Exception e)
