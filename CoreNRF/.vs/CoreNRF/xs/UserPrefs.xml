@@ -7,7 +7,7 @@
       <File FileName="CoreNRF/Dtos/NRFDto/PortalOrNFDiscoverDto.cs" />
       <File FileName="CoreNRF/Dtos/ServiceDto/ServicesAnswerDto.cs" />
       <File FileName="CoreNRF/Services/NFService/NFService.cs" />
-      <File FileName="CoreNRF/Api/RegisterController.cs" Line="52" Column="10" />
+      <File FileName="CoreNRF/Api/RegisterController.cs" Line="50" Column="44" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -37,11 +37,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.CoreNRF PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.CoreNRF PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
