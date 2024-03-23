@@ -1,48 +1,46 @@
 ﻿<Properties StartupConfiguration="{5C66B0F8-FCF7-4461-8CB7-CA25548AB73E}|Default">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.CoreNRF PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Services/LocationService/LocationService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CoreNRF/Api/RegisterController.cs">
     <Files>
-      <File FileName="CoreNRF/Startup.cs" Line="45" Column="41" />
-      <File FileName="CoreNRF/Api/RegisterController.cs" Line="50" Column="112" />
-      <File FileName="CoreNRF/Data/ApplicationDbContext.cs" Line="21" Column="1" />
-      <File FileName="CoreNRF/Api/RouteController.cs" Line="28" Column="10" />
-      <File FileName="CoreNRF/Program.cs" Line="1" Column="1" />
-      <File FileName="CoreNRF/appsettings.json" Line="1" Column="1" />
-      <File FileName="CoreNRF/Utils/Constants.cs" Line="4" Column="18" />
-      <File FileName="CoreNRF/Adapters/LocationAdapter/LocationAdapter.cs" Line="16" Column="40" />
-      <File FileName="CoreNRF/Services/LocationService/LocationService.cs" Line="24" Column="1" />
-      <File FileName="CoreNRF/Models/Location.cs" Line="1" Column="1" />
+      <File FileName="CoreNRF/Api/RouteController.cs" Line="67" Column="44" />
+      <File FileName="CoreNRF/Services/PortalNFService/PortalNFService.cs" Line="1" Column="1" />
+      <File FileName="CoreNRF/Adapters/PortalNfAdapter/PortalNfAdapter.cs" />
+      <File FileName="CoreNRF/Dtos/NRFDto/PortalOrNFDiscoverDto.cs" />
+      <File FileName="CoreNRF/Dtos/ServiceDto/ServicesAnswerDto.cs" />
+      <File FileName="CoreNRF/Services/NFService/NFService.cs" />
+      <File FileName="CoreNRF/Api/RegisterController.cs" Line="50" Column="44" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="CoreNRF" expanded="True">
+          <Node name="CoreNRF">
             <Node name="CoreNRF" expanded="True">
-              <Node name="Adapters" expanded="True">
-                <Node name="LocationAdapter" expanded="True" />
+              <Node name="Api" expanded="True">
+                <Node name="RegisterController.cs" selected="True" />
               </Node>
-              <Node name="Api" expanded="True" />
-              <Node name="Data" expanded="True" />
+              <Node name="Dtos" expanded="True">
+                <Node name="NRFDto" expanded="True" />
+                <Node name="ServiceDto" expanded="True" />
+              </Node>
+              <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True">
-                <Node name="LocationService" expanded="True">
-                  <Node name="LocationService.cs" selected="True" />
-                </Node>
+                <Node name="NFService" expanded="True" />
+                <Node name="PortalNFService" expanded="True" />
+                <Node name="PortalService" expanded="True" />
+                <Node name="ServicesService" expanded="True" />
               </Node>
               <Node name="Utils" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.CoreNRF PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

@@ -48,11 +48,46 @@ namespace CoreNRF.Services.NFService
             }
         }
         public NF GetNFById(Guid Id)
-        {            
-            var nf= _context.NFs.Include(x => x.Location).Include(x=> x.Services).Where(x => x.Id == Id).FirstOrDefault();
-            return nf != null && nf.Id != Guid.Empty ? nf : new NF { Id = Guid.Empty };
+        {
+            try
+            {
+                var nf = _context.NFs.Include(x => x.Location).Include(x => x.Services).Where(x => x.Id == Id).FirstOrDefault();
+                return nf != null && nf.Id != Guid.Empty ? nf : new NF { Id = Guid.Empty };
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
+                return null;
+            }
+            
         }
-        
+        public NF GetNFbyName (string name)
+        {
+            try
+            {
+                // aqui se extrae la 1ra (y unica por el momento NF del mismo tipo), hasta que haya algoritmos de calculo de la mejor opcion de las distintas instanceas
+                //de un mismo tipo de NF
+                return _context.NFs.FirstOrDefault(x => x.Name == name);
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
+                return null;
+            }
+        }
+        public Guid GetNfIDbyName (string name)
+        {
+            try
+            {
+                return GetNFbyName(name).Id;
+                
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
+                return Guid.Empty;
+            }
+        }
         
     }
 }

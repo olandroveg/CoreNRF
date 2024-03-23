@@ -1,12 +1,16 @@
 ﻿using CoreNRF.Adapters.LocationAdapter;
 using CoreNRF.Adapters.NFAdapter;
 using CoreNRF.Adapters.ServiceAdapter;
+using CoreNRF.Dtos.NRFDto;
 using CoreNRF.Dtos.ServiceDto;
 using CoreNRF.Services.LocationService;
 using CoreNRF.Services.NFService;
+using CoreNRF.Services.PortalNFService;
+using CoreNRF.Services.PortalService;
 using CoreNRF.Services.ServicesService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,8 +27,11 @@ namespace CoreNRF.Api
         private readonly ILocationAdapter _locationAdapter;
         private readonly IServiceAdapter _serviceAdapter;
         private readonly INFAdapter _nFAdapter;
+        private readonly IPortalNFService _portalNFService;
+        private readonly IPortalService _portalService;
         public RouteController(INFService nFService, IServicesService servicesService, ILocationAdapter locationAdapter,
-            ILocationService locationService, IServiceAdapter serviceAdapter, INFAdapter nFAdapter)
+            ILocationService locationService, IServiceAdapter serviceAdapter, INFAdapter nFAdapter, IPortalNFService portalNFService,
+            IPortalService portalService)
         {
             _nFService = nFService;
             _servicesServices = servicesService;
@@ -32,6 +39,8 @@ namespace CoreNRF.Api
             _locationService = locationService;
             _serviceAdapter = serviceAdapter;
             _nFAdapter = nFAdapter;
+            _portalNFService = portalNFService;
+            _portalService = portalService;
         }
         [HttpPost]
         public async Task< IActionResult> ServiceRequest([FromBody] ServiceReqstDto serviceRqst)
@@ -50,5 +59,27 @@ namespace CoreNRF.Api
            
             return Ok(serv);
         }
+        [HttpPost]
+        public async Task<IActionResult> AllApisNF([FromBody] PortalOrNFDiscoverDto incomeDiscover)
+        {
+            try
+            {
+                if (incomeDiscover == null)
+                    throw new ArgumentNullException(nameof(incomeDiscover));
+                var sourceId = Guid.Empty;
+                if (incomeDiscover.SourceNFId != Guid.Empty)
+                    sourceId = _nFService.GetNFById(incomeDiscover.SourceNFId).Id;
+                if (incomeDiscover.PortalId != Guid.Empty)                
+                    sourceId = _portalService.GetPortalById(incomeDiscover.PortalId).Id;
+                var serv = await _portalNFService.GetPortalNFbyIdsAndName(sourceId, incomeDiscover.TargetNFId, incomeDiscover.NFName, incomeDiscover.isPortal);
+                var targetNfId = await _portalNFService.CheckAndAdd(sourceId, incomeDiscover.TargetNFId, incomeDiscover.NFName);
+                return Ok(serv);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
     }
 }

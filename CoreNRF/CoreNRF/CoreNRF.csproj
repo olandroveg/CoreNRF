@@ -39,10 +39,9 @@
     <None Remove="Services\NFServService\" />
     <None Remove="Adapters\NFServAdapter\" />
     <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <None Remove="Adapters\PortalNF\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Utils\" />
-    <Folder Include="Services\" />
     <Folder Include="Services\NFService\" />
     <Folder Include="Services\ServicesService\" />
     <Folder Include="Dtos\LocationDto\" />
@@ -53,5 +52,6 @@
     <Folder Include="Adapters\NFAdapter\" />
     <Folder Include="Services\NFServService\" />
     <Folder Include="Adapters\NFServAdapter\" />
+    <Folder Include="Adapters\PortalNfAdapter\" />
   </ItemGroup>
 </Project>

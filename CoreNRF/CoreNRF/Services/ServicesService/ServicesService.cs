@@ -68,10 +68,42 @@ namespace CoreNRF.Services.ServicesService
                {
                    ServicesAPI = g.ServiceAPI,
                    TargetNFAdd = g.NfBaseAddress,
-                   ServiceName = g.Name
+                   ServiceName = g.Name,
+                   Description = g.Description,
                }).FirstOrDefault();
            });
             
+        }
+        public IEnumerable<ServicesAnswerDto> GetAllApiFromNF (Guid nfId, string nfName)
+        {
+            try
+            {
+                if (nfId != Guid.Empty && _context.Services.Any(e => e.NfId == nfId))
+                    return _context.Services.Where(x => x.NfId == nfId).Select(e => new ServicesAnswerDto
+                    {
+                        NFId = e.NfId,
+                        ServiceName = e.Name,
+                        TargetNFAdd = e.NfBaseAddress,
+                        Description = e.Description,
+                        ServicesAPI = e.ServiceAPI
+                    });
+                // aqui se asume, al no existir todavia calculos de cual instanceas de NF iguales sea mas optima escoger, pues se escoje la 1ra q aparezca de ese tipo en BD.
+                var targNfId = _context.Services.Include(e => e.Nf).Where(x => x.Nf.Name == nfName).FirstOrDefault().NfId;
+                return _context.Services.Where(x => x.NfId == targNfId).Select(e => new ServicesAnswerDto
+                {
+                    NFId = e.NfId,
+                    ServiceName = e.Name,
+                    TargetNFAdd = e.NfBaseAddress,
+                    Description = e.Description,
+                    ServicesAPI = e.ServiceAPI
+                });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+
         }
         public async Task< IEnumerable<ServicesAnswerDto>> GetServAPIAfterDisclaim(IEnumerable<ServicesAnswerDto> serviceAnswerDisclaim, IEnumerable<string> serviceRqts)
         {

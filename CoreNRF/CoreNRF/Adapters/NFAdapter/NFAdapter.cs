@@ -15,7 +15,8 @@ namespace CoreNRF.Adapters.NFAdapter
                 Name = nfDto.Name,
                 State = nfDto.state,
                 Location = location,
-                SuscriptionAPI = nfDto.SuscriptionApi
+                SuscriptionAPI = nfDto.SuscriptionApi,
+                Version = nfDto.Version
 
             };
         }
@@ -26,6 +27,7 @@ namespace CoreNRF.Adapters.NFAdapter
             nF.Name = nfDto.Name;
             nF.State = nfDto.state;
             nF.SuscriptionAPI = nfDto.SuscriptionApi;
+            nF.Version = nfDto.Version;
             return nF;
         }
     }

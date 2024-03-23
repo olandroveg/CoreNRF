@@ -58,6 +58,9 @@ namespace CoreNRF.Migrations
                     b.Property<string>("SuscriptionAPI")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Version")
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
 
                     b.HasIndex("LocationId");
@@ -84,6 +87,52 @@ namespace CoreNRF.Migrations
                     b.HasIndex("ServiceId");
 
                     b.ToTable("NFServices");
+                });
+
+            modelBuilder.Entity("CoreNRF.Models.Portal", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid?>("LocationId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("PortalName")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LocationId");
+
+                    b.ToTable("Portal");
+                });
+
+            modelBuilder.Entity("CoreNRF.Models.PortalNF", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<Guid>("NFId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("PortalId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("RelationName")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NFId");
+
+                    b.HasIndex("PortalId");
+
+                    b.ToTable("PortalNF");
                 });
 
             modelBuilder.Entity("CoreNRF.Models.Services", b =>
@@ -334,6 +383,34 @@ namespace CoreNRF.Migrations
                     b.Navigation("Service");
                 });
 
+            modelBuilder.Entity("CoreNRF.Models.Portal", b =>
+                {
+                    b.HasOne("CoreNRF.Models.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationId");
+
+                    b.Navigation("Location");
+                });
+
+            modelBuilder.Entity("CoreNRF.Models.PortalNF", b =>
+                {
+                    b.HasOne("CoreNRF.Models.NF", "NF")
+                        .WithMany("PortalNFs")
+                        .HasForeignKey("NFId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CoreNRF.Models.Portal", "Portal")
+                        .WithMany("PortalNFs")
+                        .HasForeignKey("PortalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("NF");
+
+                    b.Navigation("Portal");
+                });
+
             modelBuilder.Entity("CoreNRF.Models.Services", b =>
                 {
                     b.HasOne("CoreNRF.Models.NF", "Nf")
@@ -400,7 +477,14 @@ namespace CoreNRF.Migrations
                 {
                     b.Navigation("NFServices");
 
+                    b.Navigation("PortalNFs");
+
                     b.Navigation("Services");
+                });
+
+            modelBuilder.Entity("CoreNRF.Models.Portal", b =>
+                {
+                    b.Navigation("PortalNFs");
                 });
 
             modelBuilder.Entity("CoreNRF.Models.Services", b =>

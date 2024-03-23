@@ -788,3 +788,8 @@ C:/Users/1094545/source/repos/olandroveg/CoreNRF/CoreNRF/CoreNRF/obj/Debug/net5.
 C:/Users/1094545/source/repos/olandroveg/CoreNRF/CoreNRF/CoreNRF/obj/Debug/net5.0/CoreNRF.pdb
 C:/Users/1094545/source/repos/olandroveg/CoreNRF/CoreNRF/CoreNRF/obj/Debug/net5.0/CoreNRF.genruntimeconfig.cache
 C:/Users/1094545/source/repos/olandroveg/CoreNRF/CoreNRF/CoreNRF/obj/Debug/net5.0/ref/CoreNRF.dll
+/Users/subzero/Projects/CoreNRF/CoreNRF/CoreNRF/CoreNRF/obj/Debug/net5.0/staticwebassets/CoreNRF.StaticWebAssets.Pack.cache
+/Users/subzero/Projects/CoreNRF/CoreNRF/CoreNRF/CoreNRF/obj/Debug/net5.0/staticwebassets/msbuild.CoreNRF.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/subzero/Projects/CoreNRF/CoreNRF/CoreNRF/CoreNRF/obj/Debug/net5.0/staticwebassets/msbuild.build.CoreNRF.props
+/Users/subzero/Projects/CoreNRF/CoreNRF/CoreNRF/CoreNRF/obj/Debug/net5.0/staticwebassets/msbuild.buildMultiTargeting.CoreNRF.props
+/Users/subzero/Projects/CoreNRF/CoreNRF/CoreNRF/CoreNRF/obj/Debug/net5.0/staticwebassets/msbuild.buildTransitive.CoreNRF.props
