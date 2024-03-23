@@ -6,3 +6,5 @@ This process is called Register and Discovery. NRF is part of the "BCN Microserv
 Core NRF is configured to use MySql DB.
 
 Developer: Orlando Landrove
+
+ASP.NetCore C# project
